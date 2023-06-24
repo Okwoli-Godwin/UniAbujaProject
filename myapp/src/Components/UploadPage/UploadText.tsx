@@ -7,29 +7,38 @@ import Adminhead from "../Adminhead/Adminhead"
 import Footer from "../Footer/Footer";
 import Swal from "sweetalert2";
 
-const Uploadgallery = () => {
-	const [GalleryImage, setGalleryImage] = React.useState("");
+const UploadText = () => {
+	const [course, setCourse] = React.useState("");
+	const [coverImage, setcoverImage] = React.useState("");
+	const [name, setName] = React.useState("");
+	const [section, setSection] = React.useState("");
+	const [summary, setSummary] = React.useState("");
+	// const [category, setCategory] = React.useState("");
 	const [previewImage, setPreviewImage] = React.useState("");
 	const [show, setShow] = React.useState(false);
 
 	const ImageOnchange = (e: any) => {
 		const file = e.target.files[0];
-		setGalleryImage(file);
+		setcoverImage(file);
 		const url = URL.createObjectURL(file);
 		setPreviewImage(url);
-		console.log(url);
+		console.log("here",url);
 	};
 
 	const UploadEbook = async () => {
 		setShow(true);
 		const formdata = new FormData();
 
-		formdata.append("GalleryImage", GalleryImage);
+		formdata.append("course", course);
+		formdata.append("coverImage", coverImage);
+		formdata.append("name", name);
+		formdata.append("section", section);
+		formdata.append("summary", summary);
 
 		await axios
-			.post("https://cur-uni-abuja.onrender.com/app/gallery/post", formdata)
+			.post("https://cur-uni-abuja.onrender.com/app/image/post", formdata)
 			.then((res) => {
-				console.log("data", res);
+				console.log("data",res);
 				setShow(false);
 			})
 			Swal.fire({
@@ -37,6 +46,7 @@ const Uploadgallery = () => {
             title: "Image Uploaded",
             timer: 3000
           })
+			
 	};
 
 	return (
@@ -52,8 +62,45 @@ const Uploadgallery = () => {
 					<Input onChange={ImageOnchange} id='pix' type='file' />
 					<Button htmlFor='pix'>Upload Image</Button>
 
-					{
-					GalleryImage !== "" ? (
+					<Inp
+						onChange={(e) => {
+							setName(e.target.value);
+						}}
+						placeholder='Enter Name'
+					/>
+					<Inp
+						onChange={(e) => {
+							setCourse(e.target.value);
+						}}
+						placeholder='Enter Course'
+					/>
+					<Inp
+						onChange={(e) => {
+							setSection(e.target.value);
+						}}
+						placeholder='Enter Section'
+					/>
+					<Inp
+						onChange={(e) => {
+							setSummary(e.target.value);
+						}}
+						placeholder='Enter Summary'
+					/>
+					{/* <Select
+						onChange={(e) => {
+							setCategory(e.target.value);
+						}}>
+						<option>select a category</option>
+						<option value='comedy'>Comedy</option>
+						<option value='music'>Music</option>
+						<option value='romance'>Romance</option>
+					</Select> */}
+
+					{name !== "" &&
+					// category !== "" &&
+					course !== "" &&
+					// summary !== "" &&
+					coverImage !== "" ? (
 						<Button2 onClick={UploadEbook} cp='pointer' bg='black'>
 							Submit
 						</Button2>
@@ -71,7 +118,7 @@ const Uploadgallery = () => {
 	);
 };
 
-export default Uploadgallery;
+export default UploadText;
 
 const Img = styled.img`
 	height: 100%;

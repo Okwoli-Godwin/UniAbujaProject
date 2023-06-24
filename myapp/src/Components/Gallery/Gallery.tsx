@@ -3,24 +3,6 @@ import styled from 'styled-components'
 import Header from '../Header'
 import img from "../Assets/uniAbuja.jpeg"
 import img2 from "../Assets/sent1.jpeg"
-import img3 from "../Assets/sent2.jpeg"
-import img4 from "../Assets/sent3.jpeg"
-import img5 from "../Assets/sent4.jpeg"
-import img6 from "../Assets/group.jpeg"
-import img7 from "../Assets/sent7.jpeg"
-import img8 from "../Assets/sent6.jpeg"
-import img9 from "../Assets/sent9.jpeg"
-import img10 from "../Assets/sent10.jpeg"
-import img11 from "../Assets/sent11.jpeg"
-import img12 from "../Assets/sent12.jpeg"
-import img13 from "../Assets/sent13.jpeg"
-import img14 from "../Assets/sent14.jpeg"
-import img15 from "../Assets/gal1.jpeg"
-import img16 from "../Assets/gal2.jpeg"
-import img17 from "../Assets/18.jpeg"
-import img18 from "../Assets/hall1.jpeg"
-import img19 from "../Assets/hall2.jpeg"
-import img20 from "../Assets/hall3.jpeg"
 import Footer from '../Footer/Footer'
 import Pagination from '../Pagination/Pagination'
 import axios from 'axios'
@@ -29,34 +11,18 @@ import { useQuery } from "@tanstack/react-query"
 import { ReadImage } from '../Apis/ApiCalls'
 
 interface User {
-  image: string
-  id: string
+  id: string,
+	GalleryImage: string
 }
 
 const Gallery = () => {
 
-    const [currentpage, setCurrentpage] = useState(1)
-    const [postperpage, setPostperpage] = useState(9)
     const [postData, setPostData] = useState<User[]>([])
 
-    const indexOfLastPost = currentpage * postperpage
-    const indexOfFirstPost = indexOfLastPost - postperpage
-    const currentPosts = postData.slice(indexOfFirstPost, indexOfLastPost)
-
-    const paginate = (pageNumber: number) => setCurrentpage(pageNumber)
-
-    const ReadData = async () => {
-      await axios.get("http://localhost:2035/image/get")
-        .then((res) => {
-          setPostData(res.data.data)
-        })
-    }
-    useEffect(() => {
-		ReadData();
-    }, []);
   
   const data = useQuery({
-    queryFn: ReadImage
+    queryFn: ReadImage,
+    queryKey : ["allImages"]
   })
 
   return (
@@ -75,14 +41,12 @@ const Gallery = () => {
             data?.data?.data.map((e: any) => (
               <Box key={e._id}>
                 <Up>
-                    <Imgs  src={e.image}/>
-                    
+                    <Imgs  src={e.GalleryImage}/> 
                 </Up>
             </Box>
             ))
              }
           
-          <Pagi><Pagination postsPerPage={postperpage} totalPosts={postData.length} paginate={paginate}/></Pagi>
         </Down>
       </Wrapper>
       <Footer />
