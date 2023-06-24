@@ -11,3 +11,9 @@ export const createAdmin = async (data: any) => {
 export const LoginAdmin = async (data: AdminData) => {
     return await axios.post(`${url}/login`, data).then((res) => res.data ).catch((res) => res);
 }
+
+export const ReadData = async () => {
+      return  await axios
+            .get("https://cur-uni-abuja.onrender.com/app/image/getall")
+            .then((res) => res.data).catch((err) => err)
+    }

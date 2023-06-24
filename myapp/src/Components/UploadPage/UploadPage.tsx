@@ -8,35 +8,37 @@ import Footer from "../Footer/Footer";
 import Swal from "sweetalert2";
 
 const UploadPage = () => {
-	const [title, setTitle] = React.useState("");
 	const [course, setCourse] = React.useState("");
+	const [coverImage, setcoverImage] = React.useState("");
+	const [name, setName] = React.useState("");
+	const [section, setSection] = React.useState("");
 	const [summary, setSummary] = React.useState("");
-	const [author, setAuthor] = React.useState("");
-	const [category, setCategory] = React.useState("");
-	const [image, setImage] = React.useState("");
+	// const [category, setCategory] = React.useState("");
 	const [previewImage, setPreviewImage] = React.useState("");
 	const [show, setShow] = React.useState(false);
 
 	const ImageOnchange = (e: any) => {
 		const file = e.target.files[0];
-		setImage(file);
+		setcoverImage(file);
 		const url = URL.createObjectURL(file);
 		setPreviewImage(url);
-		console.log(url);
+		console.log("here",url);
 	};
 
 	const UploadEbook = async () => {
 		setShow(true);
 		const formdata = new FormData();
 
-		formdata.append("title", title);
 		formdata.append("course", course);
-		formdata.append("image", image);
+		formdata.append("coverImage", coverImage);
+		formdata.append("name", name);
+		formdata.append("section", section);
+		formdata.append("summary", summary);
 
 		await axios
 			.post("https://cur-uni-abuja.onrender.com/app/image/post", formdata)
 			.then((res) => {
-				console.log(res);
+				console.log("data",res);
 				setShow(false);
 			})
 			Swal.fire({
@@ -44,9 +46,7 @@ const UploadPage = () => {
             title: "Image Uploaded",
             timer: 3000
           })
-			.catch(() => {
-				setShow(false);
-			});
+			
 	};
 
 	return (
@@ -64,7 +64,7 @@ const UploadPage = () => {
 
 					<Inp
 						onChange={(e) => {
-							setTitle(e.target.value);
+							setName(e.target.value);
 						}}
 						placeholder='Enter Name'
 					/>
@@ -73,6 +73,18 @@ const UploadPage = () => {
 							setCourse(e.target.value);
 						}}
 						placeholder='Enter Course'
+					/>
+					<Inp
+						onChange={(e) => {
+							setSection(e.target.value);
+						}}
+						placeholder='Enter Section'
+					/>
+					<Inp
+						onChange={(e) => {
+							setSummary(e.target.value);
+						}}
+						placeholder='Enter Summary'
 					/>
 					{/* <Select
 						onChange={(e) => {
@@ -84,11 +96,11 @@ const UploadPage = () => {
 						<option value='romance'>Romance</option>
 					</Select> */}
 
-					{title !== "" &&
+					{name !== "" &&
 					// category !== "" &&
 					course !== "" &&
 					// summary !== "" &&
-					image !== "" ? (
+					coverImage !== "" ? (
 						<Button2 onClick={UploadEbook} cp='pointer' bg='black'>
 							Submit
 						</Button2>
