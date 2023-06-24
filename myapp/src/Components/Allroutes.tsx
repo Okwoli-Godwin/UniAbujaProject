@@ -17,6 +17,7 @@ import Submission from './Sumission/Submission'
 import Guideline from './Guideline/Guideline'
 import Review from './Review/Review'
 import Dashboard from './Dashboard/Dashboard'
+import Uploadgallery from './UploadPage/Uploadgallery'
 
 const Allroutes = () => {
     let element = useRoutes([
@@ -101,6 +102,10 @@ const Allroutes = () => {
         {
             path: "/dashboard",
             element: <Dashboard />
+        },
+        {
+            path: "/galleryupload",
+            element: <Uploadgallery />
         }
     ])
   return element

@@ -25,11 +25,12 @@ import Footer from '../Footer/Footer'
 import Pagination from '../Pagination/Pagination'
 import axios from 'axios'
 import Swal from "sweetalert2"
+import { useQuery } from "@tanstack/react-query"
+import { ReadImage } from '../Apis/ApiCalls'
 
 interface User {
-	coverImage: string;
-	title: string;
-  course: string
+  image: string
+  id: string
 }
 
 const Gallery = () => {
@@ -52,7 +53,11 @@ const Gallery = () => {
     }
     useEffect(() => {
 		ReadData();
-	}, []);
+    }, []);
+  
+  const data = useQuery({
+    queryFn: ReadImage
+  })
 
   return (
     <Container>
@@ -64,100 +69,19 @@ const Gallery = () => {
             <Text>Hello Welcome to <span>Center for Undergraduate Research</span> photo gallery with memories and events coming up</Text>
           </Left>
         </Top>
-        {/* {currentPosts?.map((props) => ( */}
          
           <Down>
-             <Box>
+          {
+            data?.data?.data.map((e: any) => (
+              <Box key={e._id}>
                 <Up>
-                    <Imgs  src={img2}/>
+                    <Imgs  src={e.image}/>
                     
                 </Up>
             </Box>
-            <Box>
-                <Up>
-                  <Imgs  src={img3}/>
-                </Up>
-            </Box>
-            <Box>
-                <Up>
-                  <Imgs  src={img4}/>
-                </Up>
-            </Box>
-            <Box>
-                <Up>
-                  <Imgs  src={img5}/>
-                </Up>
-            </Box>
-            <Box>
-                <Up>
-                  <Imgs  src={img8}/>
-                </Up>
-            </Box>
-            <Box>
-                <Up>
-                  <Imgs  src={img7}/>
-                </Up>
-            </Box>
-            <Box>
-                <Up>
-                  <Imgs  src={img9}/>
-                </Up>
-            </Box>
-            <Box>
-                <Up>
-                  <Imgs  src={img10}/>
-                </Up>
-            </Box>
-            <Box>
-                <Up>
-                  <Imgs  src={img11}/>
-                </Up>
-            </Box>
-             <Box>
-                <Up>
-                  <Imgs  src={img12}/>
-                </Up>
-            </Box>
-            <Box>
-                <Up>
-                  <Imgs  src={img13}/>
-                </Up>
-            </Box>
-            <Box>
-                <Up>
-                  <Imgs  src={img14}/>
-                </Up>
-            </Box>
-            <Box>
-                <Up>
-                  <Imgs  src={img15}/>
-                </Up>
-            </Box>
-            <Box>
-                <Up>
-                  <Imgs  src={img16}/>
-                </Up>
-            </Box>
-             <Box>
-                <Up>
-                  <Imgs  src={img17}/>
-                </Up>
-          </Box>
-          <Box>
-                <Up>
-                  <Imgs  src={img18}/>
-                </Up>
-          </Box>
-          <Box>
-                <Up>
-                  <Imgs  src={img19}/>
-                </Up>
-          </Box>
-          <Box>
-                <Up>
-                  <Imgs  src={img20}/>
-                </Up>
-            </Box>
+            ))
+             }
+          
           <Pagi><Pagination postsPerPage={postperpage} totalPosts={postData.length} paginate={paginate}/></Pagi>
         </Down>
       </Wrapper>

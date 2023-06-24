@@ -10,12 +10,14 @@ const Dashboard = () => {
             <Wrapper>
                 <Img src={image} />
                 <Down>
-                    <Holder>
+                    <NavLink to="/galleryupload" style={{textDecoration: "none"}}>
+                        <Holder>
                         <Upload>
                             <AiOutlinePlus />
                         </Upload>
                         <Text><h3>Upload Gallery</h3></Text>
                     </Holder>
+                    </NavLink>
 
                     <NavLink to="/upload">
                         <Holder>

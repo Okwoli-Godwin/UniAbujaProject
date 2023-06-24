@@ -1,23 +1,5 @@
 import React, { useEffect } from 'react'
 import styled from 'styled-components'
-import img from "../Assets/boss.jpg"
-import img3 from "../Assets/two.jpeg"
-import img4 from "../Assets/three.jpeg"
-import img5 from "../Assets/rep1.jpeg"
-import img6 from "../Assets/rep2.jpeg"
-import img7 from "../Assets/baba.jpeg"
-import img8 from "../Assets/aba.jpeg"
-import img9 from "../Assets/ojike.jpeg"
-import img10 from "../Assets/wole.jpeg"
-import img11 from "../Assets/pami.jpeg"
-import img12 from "../Assets/blessing.jpeg"
-import img13 from "../Assets/esther.jpeg"
-import img14 from "../Assets/faiza.jpeg"
-import img15 from "../Assets/ridone.jpeg"
-import img16 from "../Assets/fri.jpeg"
-import img17 from "../Assets/gift.jpeg"
-import img18 from "../Assets/lati.jpeg"
-import img19 from "../Assets/ebule.jpeg"
 import axios from 'axios'
 import { NavLink } from 'react-router-dom'
 import Pagination from '../Pagination/Pagination'

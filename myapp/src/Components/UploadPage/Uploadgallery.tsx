@@ -8,11 +8,6 @@ import Footer from "../Footer/Footer";
 import Swal from "sweetalert2";
 
 const Uploadgallery = () => {
-	const [title, setTitle] = React.useState("");
-	const [course, setCourse] = React.useState("");
-	const [summary, setSummary] = React.useState("");
-	const [author, setAuthor] = React.useState("");
-	const [category, setCategory] = React.useState("");
 	const [image, setImage] = React.useState("");
 	const [previewImage, setPreviewImage] = React.useState("");
 	const [show, setShow] = React.useState(false);
@@ -29,12 +24,10 @@ const Uploadgallery = () => {
 		setShow(true);
 		const formdata = new FormData();
 
-		formdata.append("title", title);
-		formdata.append("course", course);
 		formdata.append("image", image);
 
 		await axios
-			.post("https://cur-uni-abuja.onrender.com/app/image/post", formdata)
+			.post("https://cur-uni-abuja.onrender.com/app/gallery/post", formdata)
 			.then((res) => {
 				console.log(res);
 				setShow(false);
@@ -62,32 +55,7 @@ const Uploadgallery = () => {
 					<Input onChange={ImageOnchange} id='pix' type='file' />
 					<Button htmlFor='pix'>Upload Image</Button>
 
-					<Inp
-						onChange={(e) => {
-							setTitle(e.target.value);
-						}}
-						placeholder='Enter Name'
-					/>
-					<Inp
-						onChange={(e) => {
-							setCourse(e.target.value);
-						}}
-						placeholder='Enter Course'
-					/>
-					{/* <Select
-						onChange={(e) => {
-							setCategory(e.target.value);
-						}}>
-						<option>select a category</option>
-						<option value='comedy'>Comedy</option>
-						<option value='music'>Music</option>
-						<option value='romance'>Romance</option>
-					</Select> */}
-
-					{title !== "" &&
-					// category !== "" &&
-					course !== "" &&
-					// summary !== "" &&
+					{
 					image !== "" ? (
 						<Button2 onClick={UploadEbook} cp='pointer' bg='black'>
 							Submit
