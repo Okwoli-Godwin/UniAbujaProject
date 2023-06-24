@@ -18,6 +18,7 @@ import Guideline from './Guideline/Guideline'
 import Review from './Review/Review'
 import Dashboard from './Dashboard/Dashboard'
 import Uploadgallery from './UploadPage/Uploadgallery'
+import UploadText from './UploadPage/UploadText'
 
 const Allroutes = () => {
     let element = useRoutes([
@@ -106,6 +107,10 @@ const Allroutes = () => {
         {
             path: "/galleryupload",
             element: <Uploadgallery />
+        },
+        {
+            path: "/uploadtext",
+            element: <UploadText />
         }
     ])
   return element

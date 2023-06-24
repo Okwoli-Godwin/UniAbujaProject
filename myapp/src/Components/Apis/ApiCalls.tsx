@@ -23,3 +23,9 @@ export const ReadImage = async () => {
         .get("https://cur-uni-abuja.onrender.com/app/gallery/getall")
         .then((res) => res.data).catch((err) => err)
 }
+
+export const postText = async (data: any) => {
+    return await axios.post("https://cur-uni-abuja.onrender.com/app/text/post")
+        .then((res) => res.data)
+        .catch((error) => error)
+}

@@ -19,7 +19,7 @@ const Dashboard = () => {
                     </Holder>
                     </NavLink>
 
-                    <NavLink to="/upload">
+                    <NavLink to="/upload" style={{textDecoration: "none"}}>
                         <Holder>
                         <Upload>
                             <AiOutlinePlus />
@@ -28,12 +28,14 @@ const Dashboard = () => {
                     </Holder>
                     </NavLink>
 
-                    <Holder>
+                    <NavLink to="/uploadtext" style={{textDecoration: "none"}}>
+                        <Holder>
                         <Upload>
                             <AiOutlinePlus />
                         </Upload>
                         <Text><h3>Update Hero Text</h3></Text>
                     </Holder>
+                    </NavLink>
                 </Down>
             </Wrapper>
         </Container>
