@@ -29,3 +29,10 @@ export const postText = async (data: any) => {
         .then((res) => res.data)
         .catch((error) => error)
 }
+
+export const ReadText = async (id: any) => {
+    return await axios
+        .patch(`https://cur-uni-abuja.onrender.com/app/text/update/${id}`)
+        .then((res) => res.data)
+        .catch((error) => error)
+}
