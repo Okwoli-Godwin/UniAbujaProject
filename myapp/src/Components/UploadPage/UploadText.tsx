@@ -17,17 +17,17 @@ const UploadText = () => {
 		
 		
 
-		await axios
-			.post("https://cur-uni-abuja.onrender.com/app/image/post", data)
-			.then((res) => {
-				console.log("data",res);
-				setShow(false);
-			})
-			Swal.fire({
-            icon: "success",
-            title: "Image Uploaded",
-            timer: 3000
-          })
+		// await axios
+		// 	.post("https://cur-uni-abuja.onrender.com/app/image/post", data)
+		// 	.then((res) => {
+		// 		console.log("data",res);
+		// 		setShow(false);
+		// 	})
+		// 	Swal.fire({
+        //     icon: "success",
+        //     title: "Image Uploaded",
+        //     timer: 3000
+        //   })
 			
 	};
 
