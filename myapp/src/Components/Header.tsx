@@ -160,14 +160,6 @@ const Header = () => {
             </Button>
                   </NavLink>
                   
-                  <NavLink to="/admin" style={({ isActive }) => ({
-    textDecoration: "none",
-    color: isActive ? '#219653' : '#5f5f5f'
-  })}>
-                <Button >
-                <h5>Upload</h5>
-            </Button>
-            </NavLink>
                   </Hold>
             <Hamburger onClick={Toggle}>
                 <FiMenu />
