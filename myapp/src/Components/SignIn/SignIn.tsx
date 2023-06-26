@@ -53,19 +53,19 @@ const Signin = () => {
     onSuccess(myData) {
       dispatch(Admin(myData.data));
 
-      if (myData.data === null) {
+      if (myData?.data === null) {
         Swal.fire({
           title: "Failed to log in",
           text: "email or password incorrect",
           icon: "error",
         });
-      } else if (myData.response.data.message === "user not foud") {
+      } else if (myData?.response?.data.message === "user not foud") {
         Swal.fire({
           title: "Failed to log in",
           text: "email or password incorrect",
           icon: "error",
         });
-      } else {
+      } else if (myData?.message === "Admin created") {
         Swal.fire({
           title: "Logged in",
           html: "Successfull",
