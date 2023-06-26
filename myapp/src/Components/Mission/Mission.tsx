@@ -267,7 +267,7 @@ const Container = styled.div`
     flex-direction: column;
     align-items: center;
     background-image: url(${group});
-    /* background-position: center;
-    background-repeat: no-repeat; */
-    /* background-size: cover; */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 `

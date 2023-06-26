@@ -91,19 +91,11 @@ const BrilliantsComp = () => {
 
                   {/* <Pe>Promoting National Development through Research, Tapping Talents, Fostering Research Culture, Creating Opportunities.</Pe> */}
                   <Buttonhold>
-                    <NavLink
-                      to="/contact"
-                      style={({ isActive }) => ({
-                        textDecoration: "none",
-                        color: isActive ? "#219653" : "#5f5f5f",
-                      })}
-                    >
                       <Button>
                         {/* <Up>Deadline</Up>
                           <Down>30/04/2023</Down> */}
                         <Up>{data.button}</Up>
                       </Button>
-                    </NavLink>
                   </Buttonhold>
                 </Boshold>
               ))}
@@ -121,6 +113,7 @@ const Down = styled.div`
 `;
 const Up = styled.div`
   color: #fff;
+  text-align: center;
 `;
 const Button2 = styled.div`
   height: 50px;
@@ -146,6 +139,7 @@ const Button = styled.div`
   height: 50px;
   width: 150px;
   background-color: #00a85a;
+  text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -199,7 +193,8 @@ const Boxhold = styled.div`
   background-color: rgba(0, 0, 0, 0.5);
 `;
 const Top2 = styled.div`
-  width: 70%;
+  /* width: 70%; */
+  padding: 10px;
   display: flex;
   justify-content: center;
   color: white;
