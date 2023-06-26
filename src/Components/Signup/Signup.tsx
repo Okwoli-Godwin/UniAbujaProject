@@ -75,24 +75,9 @@ const Create = () => {
           html: "redirecting to login",
           timer: 1000,
           timerProgressBar: true,
-
-          // didOpen: () => {
-          //     Swal.showLoading();
-          // },
-          // willClose: () => {
-          //     navigate("/dashboard")
-          // }
         });
       }
     },
-
-    // onError: (error: any) => {
-    //     Swal.fire({
-    //         title: "registration failed",
-    //         text: `${error?.response?.data?.message}`,
-    //         icon: "error"
-    //     })
-    // }
   });
 
   const Submit = handleSubmit(async (data: any) => {
