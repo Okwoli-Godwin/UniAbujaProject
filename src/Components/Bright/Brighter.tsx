@@ -85,30 +85,28 @@ const BrilliantsComp = () => {
               </Buttonhold>
             </Card>
             <Card2>
-              <Boshold>
-                {getPost?.data?.data?.map((data: any) => (
-                  <>
-                    <Top2>{data.writeups}</Top2>
+              {getPost?.data?.data?.map((data: any) => (
+                <Boshold>
+                  <Top2>{data.writeups}</Top2>
 
-                    {/* <Pe>Promoting National Development through Research, Tapping Talents, Fostering Research Culture, Creating Opportunities.</Pe> */}
-                    <Buttonhold>
-                      <NavLink
-                        to="/contact"
-                        style={({ isActive }) => ({
-                          textDecoration: "none",
-                          color: isActive ? "#219653" : "#5f5f5f",
-                        })}
-                      >
-                        <Button>
-                          {/* <Up>Deadline</Up>
+                  {/* <Pe>Promoting National Development through Research, Tapping Talents, Fostering Research Culture, Creating Opportunities.</Pe> */}
+                  <Buttonhold>
+                    <NavLink
+                      to="/contact"
+                      style={({ isActive }) => ({
+                        textDecoration: "none",
+                        color: isActive ? "#219653" : "#5f5f5f",
+                      })}
+                    >
+                      <Button>
+                        {/* <Up>Deadline</Up>
                           <Down>30/04/2023</Down> */}
-                          <Up>{data.button}</Up>
-                        </Button>
-                      </NavLink>
-                    </Buttonhold>
-                  </>
-                ))}
-              </Boshold>
+                        <Up>{data.button}</Up>
+                      </Button>
+                    </NavLink>
+                  </Buttonhold>
+                </Boshold>
+              ))}
             </Card2>
           </Slider>
         </Wrapper>
