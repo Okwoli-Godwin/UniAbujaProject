@@ -272,6 +272,10 @@ const Card = styled.form`
     padding-left: 40px;
     flex-direction: column;
     padding-top: 40px;
+
+    @media screen and (max-width: 500px) {
+        width: 320px;
+    }
 `
 
 const Container = styled.div`
