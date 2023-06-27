@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import Loading from "./Loading";
-import Adminhead from "../Adminhead/Adminhead";
+import Adminhead3 from "../Adminhead/Adminhead3";
 import Footer from "../Footer/Footer";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { updateText } from "../Apis/ApiCalls";
@@ -30,7 +30,7 @@ const UploadText = () => {
 
   return (
     <Container>
-      <Adminhead />
+      <Adminhead3 />
       {show ? <Loading /> : null}
       <Wrapper>
         <Card>

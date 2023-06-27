@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import axios from "axios";
 import Loading from "./Loading";
-import Adminhead from "../Adminhead/Adminhead"
+import Adminhead2 from "../Adminhead/Adminhead2"
 import Footer from "../Footer/Footer";
 import Swal from "sweetalert2";
 
@@ -49,7 +49,7 @@ const UploadPage = () => {
 
 	return (
 		<Container>
-			<Adminhead />
+			<Adminhead2 />
 			{show ? <Loading /> : null}
 			<Wrapper>
 				<Card>

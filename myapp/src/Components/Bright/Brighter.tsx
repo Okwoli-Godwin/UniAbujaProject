@@ -203,7 +203,6 @@ const Top2 = styled.div`
   @media screen and (max-width: 425px) {
     font-size: 28px;
     font-weight: 500;
-    width: 40%;
   }
   h1 {
     font-size: 40px;

@@ -65,6 +65,10 @@ const Upload = styled.div`
     justify-content: center;
     align-items: center;
     border-radius: 20px;
+    @media screen and (max-width: 375px) {
+        width: 160px;
+        height: 160px;
+    }
 `
 const Holder = styled.div`
     display: flex;
@@ -72,6 +76,11 @@ const Holder = styled.div`
     justify-content: center;
     align-items: center;
     text-decoration: none;
+    /* background-color: green; */
+    @media screen and (max-width: 500px) {
+        width: 100%;  
+        display: flex;
+    }
 `
 const Down = styled.div`
     width: 100%;
@@ -81,6 +90,12 @@ const Down = styled.div`
     justify-content: space-between;
     @media screen and (max-width: 768px) {
         text-align: center;
+    }
+    @media screen and (max-width: 500px) {
+        width: 100%;  
+        align-items: center;
+        justify-content: center;
+        display: flex;
     }
 `
 const Img = styled.img`
@@ -94,7 +109,14 @@ const Wrapper = styled.div`
     flex-direction: column;
     @media screen and (max-width: 768px) {
         margin-top: 160px;
-        background-color: red;
+        /* background-color: red; */
+    }
+    @media screen and (max-width: 500px) {
+        width: 95%; 
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 400px;
     }
 `
 const Container = styled.div`
