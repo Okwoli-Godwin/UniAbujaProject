@@ -48,8 +48,6 @@ const P = styled.div`
     font-size: 1.125rem;
     line-height: 1.9rem;
     font-weight: 500;
-    /* margin-top: 1rem; */
-    /* width: 400px; */
     color: #132128;
   }
 `;
