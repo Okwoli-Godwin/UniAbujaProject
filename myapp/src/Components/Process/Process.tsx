@@ -1,9 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import images from "../Assets/mat1.jpg"
 import images2 from "../Assets/edu.jpeg"
-import images3 from "../Assets/mat1.jpg"
-import {GrCheckmark} from "react-icons/gr"
 
 const Find = () => {
   return (
@@ -45,10 +42,6 @@ const Find = () => {
 }
 
 export default Find
-
-const Icons = styled.div`
-    margin-right: 10px;
-`
 
 const Nav2 = styled.div`
     li{

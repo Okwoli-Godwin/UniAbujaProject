@@ -109,9 +109,11 @@ const Header = () => {
                 </Drop>
             ) : null}
         <Wrapper>
-            <Logo>
+                  <NavLink to="/">
+                      <Logo>
                 <Img src={image} />
             </Logo>
+            </NavLink>
             
             <Navigation>
                 

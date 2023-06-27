@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import img from "../Assets/uniAbuja.jpeg";
 import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { NavLink, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useMutation } from "@tanstack/react-query";
 import { UseAppDispach } from "../Apis/Store";
 import { Admin } from "../Apis/ReduxState";
@@ -24,8 +24,6 @@ const Create = () => {
     setViewPassword(!ViewPassword);
   };
 
-  const [defaultPassword, setDefaultPassword] = useState("uniabuja@123");
-
   const schema = yup
     .object({
       name: yup.string().required("name is required"),
@@ -38,8 +36,6 @@ const Create = () => {
 
   const {
     handleSubmit,
-    formState: { errors },
-    reset,
     register,
   } = useForm<formData>({
     resolver: yupResolver(schema),

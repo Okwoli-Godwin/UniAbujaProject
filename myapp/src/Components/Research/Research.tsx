@@ -1,19 +1,11 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import styled from 'styled-components'
-import axios from 'axios'
 import { NavLink } from 'react-router-dom'
 import Header from '../Header'
 import Footer from '../Footer/Footer'
 import {useQuery} from "@tanstack/react-query"
 import { ReadData } from '../Apis/ApiCalls'
 
-interface MyData{
-    id: string,
-    image: string,
-    name: string,
-    section: string,
-    summary: string
-}
 
 const Research: React.FC = () => {
 
