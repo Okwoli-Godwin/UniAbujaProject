@@ -129,23 +129,6 @@ const Create = () => {
 };
 
 export default Create;
-const Hold = styled.div`
-  width: 30%;
-  height: 120px;
-  background-color: red;
-  position: relative;
-  display: flex;
-  justify-content: center;
-  ::after {
-    content: "";
-    position: absolute;
-    width: 15px;
-    height: 15px;
-    transform: rotate(45deg);
-    background-color: red;
-    margin-top: -7px;
-  }
-`;
 
 const Iconhold = styled.div`
   width: 20%;
@@ -183,16 +166,7 @@ const Button2 = styled.button`
   cursor: pointer;
   text-decoration: none;
 `;
-const Button = styled.div`
-  width: 125px;
-  height: 40px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #b2b2b2;
-  margin: 7px;
-  cursor: pointer;
-`;
+
 const Buttonhold = styled.div`
   width: 100%;
   padding-right: 20px;

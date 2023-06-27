@@ -68,13 +68,6 @@ const Down = styled.div`
     color: #E5F6EE;
     text-align: center;
 `
-const Hol = styled.div`
-    width: 120px;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center
-`
 const Up = styled.div`
     color: white;
     font-size: 24px;
@@ -151,21 +144,6 @@ const P = styled.div`
     margin-top: 30px;
     @media screen and (max-width: 425px) {
         margin-top: -30px;
-    }
-`
-
-const Business = styled.div`
-    font-size: 1.875rem;
-    line-height: 2.25rem;
-    font-weight: 500;
-    margin-top: 30px;
-`
-
-const Icon = styled.img`
-    height: 70px;
-    margin-left: -410px;
-    @media screen and (max-width: 425px) {
-        display: none;
     }
 `
 
