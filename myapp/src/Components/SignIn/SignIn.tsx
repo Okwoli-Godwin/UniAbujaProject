@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import img from "../Assets/uniAbuja.jpeg";
 import { Link, useNavigate } from "react-router-dom";
@@ -36,7 +36,6 @@ const Signin = () => {
 
   const {
     handleSubmit,
-    formState: { errors },
     reset,
     register,
   } = useForm<formData>({
@@ -166,16 +165,6 @@ const Button2 = styled.button`
   text-decoration: none;
   color: white;
 `;
-const Button = styled.div`
-  width: 125px;
-  height: 40px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #b2b2b2;
-  margin: 7px;
-  cursor: pointer;
-`;
 const Buttonhold = styled.div`
   width: 100%;
   padding-right: 20px;
@@ -235,6 +224,9 @@ const Card = styled.form`
   flex-direction: column;
   padding-top: 40px;
   padding-bottom: 25px;
+  @media screen and (max-width: 500px) {
+        width: 320px;
+    }
 `;
 
 const Container = styled.div`

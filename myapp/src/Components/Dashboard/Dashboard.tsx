@@ -79,6 +79,9 @@ const Down = styled.div`
     flex-wrap: wrap;
     /* background-color: red; */
     justify-content: space-between;
+    @media screen and (max-width: 768px) {
+        text-align: center;
+    }
 `
 const Img = styled.img`
     height: 180px;
@@ -89,6 +92,10 @@ const Wrapper = styled.div`
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    @media screen and (max-width: 768px) {
+        margin-top: 160px;
+        background-color: red;
+    }
 `
 const Container = styled.div`
     width: 100%;

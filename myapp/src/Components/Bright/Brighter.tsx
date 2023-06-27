@@ -1,10 +1,8 @@
 import React from "react";
 import styled from "styled-components";
-import SliderCard from "./SliderCard";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import images from "../Assets/vect.png";
 import group from "../Assets/group.jpeg";
 import maiden from "../Assets/maiden.jpeg";
 import { NavLink } from "react-router-dom";
@@ -108,9 +106,6 @@ const BrilliantsComp = () => {
 };
 
 export default BrilliantsComp;
-const Down = styled.div`
-  color: #fff;
-`;
 const Up = styled.div`
   color: #fff;
   text-align: center;
@@ -193,8 +188,9 @@ const Boxhold = styled.div`
   background-color: rgba(0, 0, 0, 0.5);
 `;
 const Top2 = styled.div`
-  /* width: 70%; */
-  padding: 10px;
+  width: 70%;
+  padding-top: 10px;
+  padding-bottom: 10px;
   display: flex;
   justify-content: center;
   color: white;
@@ -207,6 +203,7 @@ const Top2 = styled.div`
   @media screen and (max-width: 425px) {
     font-size: 28px;
     font-weight: 500;
+    width: 40%;
   }
   h1 {
     font-size: 40px;
