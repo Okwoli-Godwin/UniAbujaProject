@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import { BsImageFill } from "react-icons/bs";
 import axios from "axios";
 import Loading from "./Loading";
 import Adminhead from "../Adminhead/Adminhead"
@@ -13,7 +12,6 @@ const UploadPage = () => {
 	const [name, setName] = React.useState("");
 	const [section, setSection] = React.useState("");
 	const [summary, setSummary] = React.useState("");
-	// const [category, setCategory] = React.useState("");
 	const [previewImage, setPreviewImage] = React.useState("");
 	const [show, setShow] = React.useState(false);
 
@@ -86,20 +84,9 @@ const UploadPage = () => {
 						}}
 						placeholder='Enter Summary'
 					/>
-					{/* <Select
-						onChange={(e) => {
-							setCategory(e.target.value);
-						}}>
-						<option>select a category</option>
-						<option value='comedy'>Comedy</option>
-						<option value='music'>Music</option>
-						<option value='romance'>Romance</option>
-					</Select> */}
 
 					{name !== "" &&
-					// category !== "" &&
 					course !== "" &&
-					// summary !== "" &&
 					coverImage !== "" ? (
 						<Button2 onClick={UploadEbook} cp='pointer' bg='black'>
 							Submit
@@ -143,25 +130,6 @@ const Button2 = styled.button<{ bg: string; cp: string }>`
 	@media screen and (max-width: 500px) {
 		width: 120px;
 	}
-`;
-
-const Select = styled.select`
-	width: 370px;
-	height: 30px;
-	border-radius: 3px;
-	border: 0.7px solid silver;
-	outline-color: #f8cbe0;
-	padding-left: 10px;
-`;
-
-const TexArea = styled.textarea`
-	width: 350px;
-	height: 70px;
-	border-radius: 3px;
-	border: 0.7px solid silver;
-	outline-color: #f8cbe0;
-	padding-left: 10px;
-	resize: none;
 `;
 
 const Inp = styled.input`
