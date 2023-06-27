@@ -71,20 +71,6 @@ const Nav2 = styled.div`
         margin-left: 0px;
     }
 `
-const Up3 = styled.h3`
-    font-size: 28px;
-    line-height: 40px;
-    font-weight: 400;
-    color: #132128;
-    margin-top: -5px;
-    @media screen and (max-width: 1024px) {
-        margin-left: 0px;
-    }
-    @media screen and (max-width: 425px) {
-        font-size: 27px;
-        text-align: center;
-    }
-`
 
 const Up2 = styled.div`
     h2{
@@ -106,30 +92,6 @@ const Up2 = styled.div`
         font-size: 27px;
         text-align: center;
     }
-`
-
-const Nav = styled.div`
-    ul{
-        margin-top: -15px;
-    }
-    color: #132128;
-    font-family: 'Inter',sans-serif;
-    font-size: 18px;
-    line-height: 28px;
-    font-weight: 200;
-    display: flex;
-    margin-bottom: 20px;
-    margin-left: 80px;
-`
-
-const Up = styled.h3`
-    font-size: 32px;
-    line-height: 40px;
-    font-family: 'Inria Serif','Garamond',serif;
-    font-weight: 400;
-    color: #132128;
-    margin-top: -5px;
-    margin-left: 80px;
 `
 
 const Right = styled.div`
@@ -181,14 +143,6 @@ const Wrapper = styled.div<{ fd: string }>`
     @media screen and (max-width: 1024px) {
         padding-bottom: 20px;
     }
-`
-
-const Top = styled.h2`
-    font-size: 40px;
-    line-height: 48px;
-    font-family: 'Inria Serif','Garamond',serif;
-    font-weight: 400;
-    color: #132128;
 `
 
 const Container = styled.div`
