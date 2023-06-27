@@ -1,8 +1,5 @@
 import React, {useState} from 'react';
 import styled from "styled-components";
-// import { AiOutlineArrowUp }
-// import { IoIosArrowForward } from "react-icons/io";
-import { Link } from "react-scroll";
 import image from "./Assets/unib.png"
 import {FiMenu} from "react-icons/fi"
 import { NavLink } from 'react-router-dom';
@@ -288,7 +285,6 @@ const Jou = styled.div`
     display: flex;
     background-color: white;
     position: absolute;
-    /* margin-top: 180px; */
     top: 80px;
     z-index: 727267373;
     margin-left: 230px;
@@ -316,7 +312,6 @@ const Drops3 = styled.div`
     display: flex;
     background-color: white;
     position: absolute;
-    /* margin-top: 180px; */
     top: 0px;
     bottom: 0px;
     right: 0px;
@@ -341,7 +336,6 @@ const Drops2 = styled.div`
     display: flex;
     background-color: white;
     position: absolute;
-    /* margin-top: 180px; */
     top: 0px;
     bottom: 0px;
     right: 0px;
@@ -366,7 +360,6 @@ const Drops1 = styled.div`
     display: flex;
     background-color: white;
     position: absolute;
-    /* margin-top: 180px; */
     top: 0px;
     bottom: 0px;
     right: 0px;
@@ -391,29 +384,6 @@ const Drops4 = styled.div`
     display: flex;
     background-color: white;
     position: absolute;
-    /* margin-top: 180px; */
-    top: 80px;
-    z-index: 727267373;
-    margin-left: 10px;
-    border-bottom-left-radius: 15px;
-    border-bottom-right-radius: 15px;
-    padding-left: 20px;
-    padding-right: 20px;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    flex-direction: column;
-    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-    a{
-        text-decoration: none;
-    }
-`
-const Drops = styled.div`
-    width: 280px;
-    height: 200px;
-    display: flex;
-    background-color: white;
-    position: absolute;
-    /* margin-top: 180px; */
     top: 80px;
     z-index: 727267373;
     margin-left: 10px;
@@ -438,7 +408,6 @@ const Drop = styled.div`
     display: flex;
     background-color: white;
     position: absolute;
-    /* margin-top: 180px; */
     top: 80px;
     z-index: 727267373;
     margin-left: -230px;
@@ -457,7 +426,6 @@ const Card = styled.div`
     display: flex;
     position: relative;
     flex-direction: column;
-    /* justify-content: center; */
     align-items: center;
     background-color: white;
 `
@@ -472,9 +440,6 @@ const Dropdown = styled.div`
     top: 80px;
     justify-content: flex-end;
     width: 100%;
-    /* flex-direction: column; */
-    /* align-items: center; */
-    /* transform: translateY(100%); */
     transition: all 350ms;
 `
 const Hamburger = styled.div`
@@ -501,7 +466,6 @@ const Container = styled.div<{ bg: string; }>`
     background-color: ${(props) => props.bg};
     border-bottom: #f1f1f1;
     display: flex;
-    /* overflow: hidden; */
     align-items: center;
     justify-content: center;
     position: sticky;
@@ -514,7 +478,6 @@ const Wrapper = styled.div`
     height: 50px;
     width: 90%;
     display: flex;
-    /* overflow: hidden; */
     position: relative;
     align-items: center;
     justify-content: space-between;
@@ -536,8 +499,6 @@ const Navigation = styled.div`
     @media screen and (max-width: 1021px) {
         display: none;
     }
-    /* cursor: pointer; */
-    /* background-color: red; */
 `;
 const Navhold = styled.div`
     font-weight: bolder;
@@ -571,25 +532,6 @@ const Button3 = styled.div`
     font-weight: bold;
 	color: white;
     margin-top: 25px;
-    :hover{
-        transform: scale(0.9);
-        background-color: #F5F5F5;
-        color: #00A85A;
-        border: 1px solid #00A85A;
-    };
-`;
-const Button2 = styled.div`
-    height: 50px;
-    width: 150px;
-    background-color:  #00A85A;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 10px;
-    cursor: pointer;
-    transition: all 350ms;
-    font-weight: bold;
-	color: white;
     :hover{
         transform: scale(0.9);
         background-color: #F5F5F5;
