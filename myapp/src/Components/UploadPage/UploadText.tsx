@@ -22,10 +22,12 @@ const UploadText = () => {
   });
 
   const handleSubmit = () => {
-    updateTextFn.mutate({
-      writeups,
-      button,
-    });
+    if (writeups !== "" && button !== "") {
+      updateTextFn.mutate({
+        writeups,
+        button,
+      });
+    }
   };
 
   return (
@@ -48,24 +50,13 @@ const UploadText = () => {
             placeholder="Enter Summary"
           />
 
-          {writeups !== "" &&
-          // category !== "" &&
-          button !== "" ? (
-            <Button2 onClick={handleSubmit} cp="pointer" bg="black">
-              {updateTextFn.isLoading ? "Loading.." : "Submit"}
-            </Button2>
-          ) : (
-            <Button2 cp="not-allowed" bg="silver">
-              Submit
-            </Button2>
-          )}
-          {/* <Button2
+          <Button2
             onClick={handleSubmit}
             cp={writeups !== "" && button !== "" ? "pointer" : "not-allowed"}
             bg={writeups !== "" && button !== "" ? "black" : "silver"}
           >
-            Submit
-          </Button2> */}
+            {updateTextFn.isLoading ? "Loading..." : "Submit"}
+          </Button2>
         </Card>
       </Wrapper>
       <br />
