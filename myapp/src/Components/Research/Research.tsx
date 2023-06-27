@@ -78,7 +78,6 @@ const Research: React.FC = () => {
                     <Img src={e.coverImage} />
                 </Up>
                   <Down2>
-                          <Icons><BiDotsVerticalRounded /></Icons>
                           {del ? (
                           <Dele>
                           <h3>Delete</h3>
