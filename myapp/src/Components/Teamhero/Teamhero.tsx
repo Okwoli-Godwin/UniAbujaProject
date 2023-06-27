@@ -95,105 +95,6 @@ const Right = styled.div`
         margin-top: 45px;
     }
 `
-const Down = styled.div`
-    font-weight: 500;
-    font-size: 0.875rem;
-    line-height: 1.25rem;
-    margin-top: 10px;
-
-`
-const Up = styled.div`
-    font-weight: 400;
-    font-size: 1.5rem;
-    line-height: 2rem;
-    color: #219653;
-`
-const Hold = styled.div`
-    width: 130px;
-    display: flex;
-    flex-direction: column;
-    /* background-color: yellow; */
-`
-const Numberhold = styled.div`
-    display: flex;
-    align-items: center;
-`
-const Padhold = styled.div`
-    display: flex;
-    align-items: center;
-    font-weight: 600;
-    color: #219653;
-    width: 180px;
-`
-const Last = styled.div`
-    width: 100%;
-    display: flex;
-    margin-top: 15px;
-    justify-content: space-between;
-`
-const Bottomhold = styled.div`
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    margin-top: 20px;
-    @media screen and (max-width: 874px) {
-        display: none;
-    }
-`
-const Button = styled.div`
-    height: 50px;
-    width: 150px;
-    background-color:  #00A85A;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 10px;
-    cursor: pointer;
-    transition: all 350ms;
-    font-weight: bold;
-	color: white;
-    :hover{
-        transform: scale(0.9);
-        background-color: #F5F5F5;
-        color: #00A85A;
-        border: 1px solid #00A85A;
-    };
-`;
-const Buttonhold = styled.div`
-    /* width: 100%; */
-    display: flex;
-    margin-top: 70px;
-`
-const Pf = styled.div`
-    font-size: 17px;
-    line-height: 1.9rem;
-    font-weight: 500;
-    width: 100%;
-    /* text-align: center; */
-    /* color: #fff; */
-    margin-top: 45px;
-    color: #fff;
-    -moz-animation: marquee 30s linear infinite;
-        -webkit-animation: marquee 30s linear infinite;
-        animation: marquee 30s linear infinite;
-    @keyframes marquee {
-        0%{
-            transform: translateX(100%);
-        }
-        100%{
-            transform: translateX(-100%);
-        }
-    }
-    @media screen and (max-width: 768px) {
-        font-size: 18px;
-    }
-    @media screen and (max-width: 874px) {
-        width: 100%;
-    }
-     @media screen and (max-width: 320px) {
-        font-size: 15px;
-    }
-`
 const Top = styled.div`
     width: 100%;
     display: flex;
@@ -221,17 +122,6 @@ const Top = styled.div`
     }
     }
     @media screen and (max-width: 874px) {
-        width: 100%;
-    }
-`
-const Left = styled.div`
-    width: 50%;
-    /* height: 130px; */
-    display: flex;
-    flex-direction: column;
-    padding-top: 50px;
-    /* background-color: green; */
-    @media screen and (max-width: 1180px) {
         width: 100%;
     }
 `
