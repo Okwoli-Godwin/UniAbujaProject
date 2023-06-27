@@ -1,11 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import uni from "../Assets/unib.png"
-import mapsnip from "../Assets/focus.jpg"
-import { NavLink } from 'react-router-dom'
 import group from "../Assets/group.jpeg"
-import Header from '../Header'
-import Marquee from 'react-fast-marquee'
 
 const Submissionhero = () => {
   return (

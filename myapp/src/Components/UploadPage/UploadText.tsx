@@ -7,7 +7,7 @@ import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { updateText } from "../Apis/ApiCalls";
 
 const UploadText = () => {
-  const [show, setShow] = React.useState(false);
+  const [show] = React.useState(false);
   const [writeups, setWriteups] = React.useState<any>("");
   const [button, setButton] = React.useState<any>("");
 
