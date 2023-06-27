@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import { BsImageFill } from "react-icons/bs";
 import axios from "axios";
 import Loading from "./Loading";
 import Adminhead from "../Adminhead/Adminhead"
@@ -98,41 +97,6 @@ const Button2 = styled.button<{ bg: string; cp: string }>`
 	}
 `;
 
-const Select = styled.select`
-	width: 370px;
-	height: 30px;
-	border-radius: 3px;
-	border: 0.7px solid silver;
-	outline-color: #f8cbe0;
-	padding-left: 10px;
-`;
-
-const TexArea = styled.textarea`
-	width: 350px;
-	height: 70px;
-	border-radius: 3px;
-	border: 0.7px solid silver;
-	outline-color: #f8cbe0;
-	padding-left: 10px;
-	resize: none;
-`;
-
-const Inp = styled.input`
-	margin: 10px;
-	width: 350px;
-	height: 30px;
-	border-radius: 3px;
-	border: 0.7px solid silver;
-	outline-color: #f8cbe0;
-	padding-left: 10px;
-	@media screen and (max-width: 425px) {
-		width: 300px;
-	}
-	@media screen and (max-width: 375px) {
-		width: 250px;
-	}
-`;
-
 const Input = styled.input`
 	display: none;
 `;
@@ -157,7 +121,6 @@ const Circle = styled.div`
 	height: 150px;
 	width: 250px;
 	border-radius: 5px;
-	/* border-radius: 50%; */
 	background-color: #e6e4e4;
 	display: flex;
 	justify-content: center;
@@ -174,15 +137,11 @@ const Card = styled.div`
 	box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px,
 		rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
 	width: 600px;
-	/* height: 300px; */
 	margin-top: 100px;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	flex-direction: column;
-	/* padding-top: 10px;
-	padding-bottom: 10px; */
-	/* background-color: red; */
 	padding: 25px;
 	@media screen and (max-width: 425px) {
 		width: 350px;
