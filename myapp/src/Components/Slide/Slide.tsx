@@ -1,7 +1,5 @@
 import React from 'react'
 import styled from 'styled-components'
-import img from "../Assets/slide1.svg"
-import img2 from "../Assets/prof.jpeg"
 import {AiOutlineArrowRight} from "react-icons/ai"
 import { NavLink } from 'react-router-dom'
 import img3 from "../Assets/change.jpeg"

@@ -1,11 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import uni from "../Assets/unib.png"
-import mapsnip from "../Assets/focus.jpg"
-import { NavLink } from 'react-router-dom'
 import group from "../Assets/group.jpeg"
-import Header from '../Header'
-import Marquee from 'react-fast-marquee'
 
 const Hero = () => {
   return (
@@ -20,17 +15,6 @@ const Hero = () => {
 }
 
 export default Hero
-const P = styled.div`
-    width: 100%;
-    p{
-        font-size: 25px;
-        color: white;
-        text-align: center;
-    }
-    @media screen and (max-width: 425px) {
-        margin-top: 170px;
-    }
-`
 const Boxhold = styled.div`
     width: 100%;
     height: 100%;
@@ -43,56 +27,6 @@ const Boxhold = styled.div`
     @media screen and (max-width: 425px) {
         /* margin-top: 170px; */
         padding-top: 10px;
-    }
-`
-const Img = styled.img`
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-`
-const Imagehold = styled.div`
-    width: 450px;
-    height: 500px;
-    overflow: hidden;
-    background-color: white;
-    border-bottom-left-radius: 50%;
-    border-bottom-right-radius: 50%;
-    border-top-right-radius: 10px;
-    border-top-left-radius: 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-    @media screen and (max-width: 768px) {
-        height: 430px;
-        width: 420px;
-    }
-    @media screen and (max-width: 768px) {
-        height: 400px;
-        width: 390px;
-    }
-`
-
-const Right = styled.div`
-    width: 50%;
-    display: flex;
-    margin-top: 15px;
-    justify-content: center;
-    align-items: center;
-    /* background-color: red; */
-    @media screen and (max-width: 874px) {
-        margin-top: 35px;
-        width: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-    @media screen and (max-width: 1180px) {
-        width: 100%;
-        justify-content: center;
-        align-items: center;
-        display: flex;
-        margin-top: 45px;
     }
 `
 const Top = styled.div`
