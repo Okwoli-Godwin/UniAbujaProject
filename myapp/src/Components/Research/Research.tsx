@@ -2,10 +2,8 @@ import React, { useEffect } from 'react'
 import styled from 'styled-components'
 import axios from 'axios'
 import { NavLink } from 'react-router-dom'
-import Pagination from '../Pagination/Pagination'
 import Header from '../Header'
 import Footer from '../Footer/Footer'
-import { BiDotsVerticalRounded } from "react-icons/bi"
 import {useQuery} from "@tanstack/react-query"
 import { ReadData } from '../Apis/ApiCalls'
 
@@ -19,39 +17,6 @@ interface MyData{
 
 const Research: React.FC = () => {
 
-    const [currentPage, setCurrentPage] = React.useState(1)
-    const [postPerPage, setPostPerPage] = React.useState(15)
-    const [del, setDel] = React.useState(false)
-    const [remove, setRemove] = React.useState(false)
-
-    const Delete = () => {
-        setDel(!del)
-    }
-
-    
-
-    const DeleteData = async (id: any) => {
-        await axios
-            .get(`http://localhost:3030/api/image/Delete/${id}`)
-            .then((res) => {
-                setRemove(res.data.data)
-                console.log(res.data.data)
-            })
-            .catch((err) => {
-                console.log(err)
-
-                return err;
-            })
-    }
-
-
-    //Get current posts
-    const indexOfLastPost = currentPage * postPerPage
-    const indexOfFirstPost = indexOfLastPost - postPerPage
-    // const currentPosts = imageData.slice(indexOfFirstPost, indexOfLastPost)
-
-    //change page
-    const paginate = (pageNumber: number) => setCurrentPage(pageNumber)
 
     const data = useQuery({
         queryFn: ReadData,
@@ -78,11 +43,6 @@ const Research: React.FC = () => {
                     <Img src={e.coverImage} />
                 </Up>
                   <Down2>
-                          {del ? (
-                          <Dele>
-                          <h3>Delete</h3>
-                      </Dele>
-                      ) : null}
                               <Data><span>{e.name}</span><br /><p>Medicine & Surgery</p> <h5>Research: {e.summary}</h5></Data>
                 <New>{e.section} 🥉</New>
                     {/* <New>Rs: 2021</New> */}
@@ -104,61 +64,7 @@ const Research: React.FC = () => {
 }
 
 export default Research
-const Dele = styled.div`
-    width: 120px;
-    height: 50px;
-    background-color: #fff;
-    border-radius: 5px;
-    position: absolute;
-    right: 55px;
-    display: flex;
-    margin-top: 7px;
-    justify-content: center;
-    align-items: center;
-    h3{
-        color: #219653;
-        cursor: pointer;
-    }
-`
-const Icons = styled.div`
-    color: #fff;
-    font-size: 24px;
-    margin-left: 310px;
-    display: flex;
-    margin-top: -20px;
-    /* background-color: red; */
-    cursor: pointer;
-`
-const Button2 = styled.div`
-    height: 60px;
-    width: 250px;
-    background-color:  #00A85A;
-    display: flex;
-    margin-top: 50px;
-    justify-content: center;
-    align-items: center;
-    border-radius: 10px;
-    cursor: pointer;
-    transition: all 350ms;
-    font-weight: bold;
-	color: white;
-    :hover{
-        transform: scale(0.9);
-        background-color: #F5F5F5;
-        color: #00A85A;
-        border: 1px solid #00A85A;
-    };
-    @media screen and (max-width: 425px) {
-        margin-top: 10px;
-    }
-`;
-const Boot = styled.div`
-    width: 200px;
-    height: 30px;
-    background-color: red;
-    position: absolute;
-    bottom: 40px;
-`
+
 const New = styled.div`
     width: 150px;
     height: 40px;
@@ -189,16 +95,6 @@ const New = styled.div`
         bottom: 475px;
     }
 `
-const Icon = styled.div`
-    margin-left: 25px;
-    margin-top: 5px;
-`
-const View = styled.div`
-    line-height: 1.75rem;
-    font-size: 1.125rem;
-    display: flex;
-    margin-top: 20px;
-`
 const Data = styled.div`
     h5{
         margin: 0px;
@@ -228,20 +124,6 @@ const Data = styled.div`
     }
    
 `
-const Down = styled.div`
-    width: 100%;
-    height: 50%;
-    background-color: #A74F46;
-    display: flex;
-    padding-top: 40px;
-    padding-left: 40px;
-    color: white;
-    flex-direction: column;
-    position: relative;
-    @media screen and (max-width: 425px) {
-        padding-left: 15px;
-    }
-`
 const Down2 = styled.div`
     width: 100%;
     height: 50%;
@@ -255,83 +137,6 @@ const Down2 = styled.div`
     @media screen and (max-width: 425px) {
         padding-left: 15px;
     }
-`
-const Down3 = styled.div`
-    width: 100%;
-    height: 50%;
-    background-color: #A74F46;
-    display: flex;
-    padding-top: 40px;
-    padding-left: 30px;
-    color: white;
-    flex-direction: column;
-    position: relative;
-    @media screen and (max-width: 425px) {
-        padding-left: 15px;
-    }
-`
-const Down4 = styled.div`
-    width: 100%;
-    height: 50%;
-    background-color: #0C8F54;
-    display: flex;
-    padding-top: 40px;
-    padding-left: 40px;
-    color: white;
-    flex-direction: column;
-    position: relative;
-    @media screen and (max-width: 425px) {
-        padding-left: 15px;
-    }
-`
-const Down5 = styled.div`
-    width: 100%;
-    height: 50%;
-    background-color: #A74F46;
-    display: flex;
-    padding-top: 40px;
-    padding-left: 40px;
-    color: white;
-    flex-direction: column;
-    position: relative;
-    @media screen and (max-width: 425px) {
-        padding-left: 15px;
-    }
-`
-const Down6 = styled.div`
-    width: 100%;
-    height: 50%;
-    background-color: #0C8F54;
-    display: flex;
-    padding-top: 40px;
-    padding-left: 40px;
-    color: white;
-    flex-direction: column;
-    position: relative;
-    @media screen and (max-width: 425px) {
-        padding-left: 15px;
-    }
-`
-const Down7 = styled.div`
-    width: 100%;
-    height: 50%;
-    background-color: #10A662;
-    display: flex;
-    padding-top: 40px;
-    padding-left: 40px;
-    color: white;
-    flex-direction: column;
-`
-const Down8 = styled.div`
-    width: 100%;
-    height: 50%;
-    background-color: #000269;
-    display: flex;
-    padding-top: 40px;
-    padding-left: 40px;
-    color: white;
-    flex-direction: column;
-    
 `
 const Img = styled.img`
     transition: all 350ms;
@@ -372,39 +177,6 @@ const Box = styled.div`
         width: 100%;
     }
 
-`
-const Box2 = styled.div`
-    width: 390px;
-    height: 490px;
-    overflow: hidden;
-    border-radius: 10px;
-    margin-bottom: 30px;
-    @media screen and (max-width: 1024px) {
-        width: 440px;
-    }
-    @media screen and (max-width: 768px) {
-        width: 320px;
-    }
-    @media screen and (max-width: 445px) {
-        width: 100%;
-    }
-
-`
-const Box3 = styled.div`
-    width: 390px;
-    height: 420px;
-    overflow: hidden;
-    border-radius: 10px;
-    margin-top: 40px;
-    visibility: hidden;
-`
-const Box4 = styled.div`
-    width: 390px;
-    height: 420px;
-    overflow: hidden;
-    border-radius: 10px;
-    margin-top: 40px;
-    visibility: hidden;
 `
 const P = styled.div`
     font-size: 1.125rem;
