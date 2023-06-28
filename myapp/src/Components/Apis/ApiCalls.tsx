@@ -57,3 +57,15 @@ export const ReadText = async () => {
     .then((res) => res.data)
     .catch((error) => error);
 };
+
+export const deleteData = async (id: any) => {
+  return await axios
+    .delete(`https://cur-uni-abuja.onrender.com/app/image/delete/${id}`)
+    .then((res) => res.data)
+    .catch((err) => err);
+  // Swal.fire({
+  //   icon: "success",
+  //   title: "Image deleted",
+  //   timer: 3000,
+  // });
+};

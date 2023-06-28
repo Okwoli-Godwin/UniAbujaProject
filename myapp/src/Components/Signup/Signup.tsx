@@ -252,20 +252,19 @@ const Title = styled.div`
 `;
 
 const Card = styled.form`
-    width: 450px;
-    height: 420px;
-    background-color: white;
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-    display: flex;
-    padding-left: 40px;
-    flex-direction: column;
-    padding-top: 40px;
+  width: 450px;
+  height: 420px;
+  background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  display: flex;
+  padding-left: 40px;
+  flex-direction: column;
+  padding-top: 40px;
 
-    @media screen and (max-width: 500px) {
-        width: 320px;
-    }
-`
-
+  @media screen and (max-width: 500px) {
+    width: 320px;
+  }
+`;
 
 const Container = styled.div`
   width: 100%;

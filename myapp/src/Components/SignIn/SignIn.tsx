@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import img from "../Assets/uniAbuja.jpeg";
 import { Link, useNavigate } from "react-router-dom";
@@ -34,12 +34,7 @@ const Signin = () => {
 
   type formData = yup.InferType<typeof schema>;
 
-  const {
-    handleSubmit,
-    formState: { errors },
-    reset,
-    register,
-  } = useForm<formData>({
+  const { handleSubmit, reset, register } = useForm<formData>({
     resolver: yupResolver(schema),
   });
 
@@ -95,7 +90,7 @@ const Signin = () => {
       <Card onSubmit={Submit}>
         <Title>
           <Image src={img} />
-          <Name>Uni-Abuja</Name>
+          <Name>Center for Undergraduate Research</Name>
         </Title>
         <Sign>Sign in</Sign>
         <Namein
@@ -117,7 +112,7 @@ const Signin = () => {
 
         <Signup>
           <Noacc to="/signup">
-            No Account? <span>Create One!</span>
+            {/* No Account? <span>Create One!</span> */}
           </Noacc>
         </Signup>
 
@@ -166,16 +161,6 @@ const Button2 = styled.button`
   text-decoration: none;
   color: white;
 `;
-const Button = styled.div`
-  width: 125px;
-  height: 40px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #b2b2b2;
-  margin: 7px;
-  cursor: pointer;
-`;
 const Buttonhold = styled.div`
   width: 100%;
   padding-right: 20px;
@@ -215,6 +200,7 @@ const Name = styled.h2`
   color: #219653;
   margin-left: 5px;
   margin: 0;
+  font-size: 17px;
 `;
 const Image = styled.img`
   height: 55px;
@@ -235,6 +221,9 @@ const Card = styled.form`
   flex-direction: column;
   padding-top: 40px;
   padding-bottom: 25px;
+  @media screen and (max-width: 500px) {
+    width: 320px;
+  }
 `;
 
 const Container = styled.div`
