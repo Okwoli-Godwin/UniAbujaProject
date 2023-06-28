@@ -94,7 +94,7 @@ const Signin = () => {
       <Card onSubmit={Submit}>
         <Title>
           <Image src={img} />
-          <Name>Uni-Abuja</Name>
+          <Name>Center for Undergraduate Research</Name>
         </Title>
         <Sign>Sign in</Sign>
         <Namein
@@ -116,7 +116,7 @@ const Signin = () => {
 
         <Signup>
           <Noacc to="/signup">
-            No Account? <span>Create One!</span>
+            {/* No Account? <span>Create One!</span> */}
           </Noacc>
         </Signup>
 
@@ -204,6 +204,7 @@ const Name = styled.h2`
   color: #219653;
   margin-left: 5px;
   margin: 0;
+  font-size: 17px;
 `;
 const Image = styled.img`
   height: 55px;

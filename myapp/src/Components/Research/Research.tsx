@@ -5,9 +5,24 @@ import Header from '../Header'
 import Footer from '../Footer/Footer'
 import {useQuery} from "@tanstack/react-query"
 import { ReadData } from '../Apis/ApiCalls'
+import { MdDelete } from "react-icons/md"
+import axios from "axios"
+import Swal from 'sweetalert2'
 
 
 const Research: React.FC = () => {
+
+    const deleteData = async (id: any) => {
+        await axios.delete(`https://cur-uni-abuja.onrender.com/app/image/delete/${id}`)
+            .then((res) => {
+                console.log("data", res)
+            })
+                Swal.fire({
+            icon: "success",
+            title: "Image deleted",
+            timer: 3000
+          })
+    }
 
 
     const data = useQuery({
@@ -34,7 +49,10 @@ const Research: React.FC = () => {
                 <Up>
                     <Img src={e.coverImage} />
                 </Up>
-                  <Down2>
+                          <Down2>
+                              <Delete onClick={deleteData}>
+                                  <MdDelete />
+                              </Delete>
                               <Data><span>{e.name}</span><br /><p>Medicine & Surgery</p> <h5>Research: {e.summary}</h5></Data>
                 <New>{e.section} 🥉</New>
                     {/* <New>Rs: 2021</New> */}
@@ -56,6 +74,13 @@ const Research: React.FC = () => {
 }
 
 export default Research
+const Delete = styled.div`
+    color: red;
+    position: absolute;
+    margin-left: 300px;
+    font-size: 23px;
+    cursor: pointer;
+`
 
 const New = styled.div`
     width: 150px;
