@@ -33,6 +33,8 @@ const UploadText = () => {
         // text: "",
         icon: "success",
       });
+      setWriteups("");
+      setButton("");
     }
   };
 
@@ -43,6 +45,7 @@ const UploadText = () => {
       <Wrapper>
         <Card>
           <Inp
+            value={writeups}
             onChange={(e) => {
               setWriteups(e.target.value);
             }}
@@ -50,6 +53,7 @@ const UploadText = () => {
           />
 
           <Inp
+            value={button}
             onChange={(e) => {
               setButton(e.target.value);
             }}
