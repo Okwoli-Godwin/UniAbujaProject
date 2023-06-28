@@ -63,9 +63,4 @@ export const deleteData = async (id: any) => {
     .delete(`https://cur-uni-abuja.onrender.com/app/image/delete/${id}`)
     .then((res) => res.data)
     .catch((err) => err);
-  // Swal.fire({
-  //   icon: "success",
-  //   title: "Image deleted",
-  //   timer: 3000,
-  // });
 };

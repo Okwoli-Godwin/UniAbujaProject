@@ -3,6 +3,9 @@ import styled from "styled-components";
 import Loading from "./Loading";
 import Adminhead3 from "../Adminhead/Adminhead3";
 import Footer from "../Footer/Footer";
+
+import Swal from "sweetalert2";
+
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { updateText } from "../Apis/ApiCalls";
 
@@ -14,7 +17,7 @@ const UploadText = () => {
   const queryClient = useQueryClient();
   const updateTextFn = useMutation({
     mutationFn: (data: any) => updateText(data),
-    onSuccess: (data) => {
+    onSuccess: () => {
       queryClient.invalidateQueries(["alltext"]);
     },
   });
@@ -24,6 +27,11 @@ const UploadText = () => {
       updateTextFn.mutate({
         writeups,
         button,
+      });
+      Swal.fire({
+        title: "Text Uploaded Succefully",
+        // text: "",
+        icon: "success",
       });
     }
   };
