@@ -1,7 +1,5 @@
 import React from 'react'
 import styled from 'styled-components'
-import img from "../Assets/slide1.svg"
-import img2 from "../Assets/prof.jpeg"
 import {AiOutlineArrowRight} from "react-icons/ai"
 import { NavLink } from 'react-router-dom'
 import img3 from "../Assets/change.jpeg"
@@ -67,13 +65,6 @@ const Down = styled.div`
     margin-top: 10px;
     color: #E5F6EE;
     text-align: center;
-`
-const Hol = styled.div`
-    width: 120px;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center
 `
 const Up = styled.div`
     color: white;
@@ -151,21 +142,6 @@ const P = styled.div`
     margin-top: 30px;
     @media screen and (max-width: 425px) {
         margin-top: -30px;
-    }
-`
-
-const Business = styled.div`
-    font-size: 1.875rem;
-    line-height: 2.25rem;
-    font-weight: 500;
-    margin-top: 30px;
-`
-
-const Icon = styled.img`
-    height: 70px;
-    margin-left: -410px;
-    @media screen and (max-width: 425px) {
-        display: none;
     }
 `
 

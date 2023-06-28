@@ -1,7 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
 import img from "../Assets/uni2.jpeg"
-// import Pitch from '../Pitch/Pitch'
 
 const Us = () => {
   return (
@@ -20,15 +19,7 @@ const Box = styled.div`
     align-items: center;
     border-right: 1px solid gray;
 `
-const Card = styled.div`
-    width: 95%;
-    height: 85px;
-    background-color: red;
-    position: absolute;
-    border-radius: 15px;
-    top: 370px;
-    display: flex;
-`
+
 const Text = styled.div`
     h1{
         color: white;
@@ -40,7 +31,6 @@ const Container = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    /* background-color: red; */
     background-image: url(${img});
     height: 60vh;
     background-repeat: no-repeat;
@@ -50,6 +40,5 @@ const Container = styled.div`
     margin-top: 80px;
     justify-content: center;
     align-items: center;
-
-flex-direction: column;
+    flex-direction: column;
 `
