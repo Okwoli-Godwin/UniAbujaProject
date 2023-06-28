@@ -6,9 +6,8 @@ import Footer from "../Footer/Footer";
 import { useQuery } from "@tanstack/react-query";
 import { ReadData, deleteData } from "../Apis/ApiCalls";
 import { MdDelete } from "react-icons/md";
-import axios from "axios";
+import { useMutation } from "@tanstack/react-query";
 import Swal from "sweetalert2";
-import { useMutation, useQueryClient } from "@tanstack/react-query";
 
 const Research: React.FC = () => {
   const data = useQuery({
@@ -17,11 +16,25 @@ const Research: React.FC = () => {
 
   const deletOneImage = useMutation({
     mutationFn: (id: any) => deleteData(id),
+    onSuccess: (data: any) => {
+      console.log("data", data);
+      Swal.fire({
+        icon: "success",
+        title: `${data?.message}`,
+        timer: 2000,
+        didOpen: () => {
+          Swal.showLoading();
+        },
+
+        willClose: () => {
+          window.location.reload();
+        },
+      });
+    },
   });
 
   const submit = (id: any) => {
     deletOneImage.mutate(id);
-    window.location.reload();
   };
 
   return (
