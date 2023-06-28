@@ -34,11 +34,7 @@ const Signin = () => {
 
   type formData = yup.InferType<typeof schema>;
 
-  const {
-    handleSubmit,
-    reset,
-    register,
-  } = useForm<formData>({
+  const { handleSubmit, reset, register } = useForm<formData>({
     resolver: yupResolver(schema),
   });
 
@@ -226,8 +222,8 @@ const Card = styled.form`
   padding-top: 40px;
   padding-bottom: 25px;
   @media screen and (max-width: 500px) {
-        width: 320px;
-    }
+    width: 320px;
+  }
 `;
 
 const Container = styled.div`
