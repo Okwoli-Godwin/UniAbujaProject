@@ -1,5 +1,8 @@
 import React, {useState} from 'react';
 import styled from "styled-components";
+// import { AiOutlineArrowUp }
+// import { IoIosArrowForward } from "react-icons/io";
+import { Link } from "react-scroll";
 import image from "../Assets/unib.png"
 import {FiMenu} from "react-icons/fi"
 import { NavLink } from 'react-router-dom';
@@ -32,15 +35,15 @@ const Header = () => {
                 <Img src={image} />
             </Logo>
             <Buttonhold>
-                <NavLink to="/upload" style={({ isActive }) => ({
+                <NavLink to="/galleryupload" style={({ isActive }) => ({
     textDecoration: "none",
     color: isActive ? '#219653' : '#5f5f5f'
   })}>
                             <Button2>
-                            Upload Research
+                            Upload Gallery
                         </Button2>
                         </NavLink>
-                          <NavLink to="/uploadtext" style={{textDecoration: "none"}}>
+            <NavLink to="/uploadtext" style={{textDecoration: "none"}}>
                               <Button2>
                 Upload text
             </Button2>
@@ -53,12 +56,12 @@ const Header = () => {
                 <Dropdown>
                     <Card>
                         <Buttonhold>
-                <NavLink to="/upload">
+                <NavLink to="/galleryupload">
                             <Button2>
-                            Upload Research
+                            Upload Gallery
                         </Button2>
                         </NavLink>
-           <NavLink to="/uploadtext" style={{textDecoration: "none"}}>
+            <NavLink to="/uploadtext" style={{textDecoration: "none"}}>
                               <Button2>
                 Upload text
             </Button2>
@@ -76,12 +79,12 @@ const Header = () => {
                 <Img src={image} />
             </Logo>
            <Buttonhold>
-                <NavLink to="/upload" style={({ isActive }) => ({
+                <NavLink to="/galleryupload" style={({ isActive }) => ({
     textDecoration: "none",
     color: isActive ? '#219653' : '#5f5f5f'
   })}>
                             <Button2>
-                            Upload Research
+                            Upload Gallery
                         </Button2>
                         </NavLink>
             <NavLink to="/uploadtext" style={{textDecoration: "none"}}>
@@ -96,12 +99,12 @@ const Header = () => {
             {drop ? (
                 <Dropdown>
                     <Card>
-                        <NavLink to="/upload" style={({ isActive }) => ({
+                        <NavLink to="/galleryupload" style={({ isActive }) => ({
     textDecoration: "none",
     color: isActive ? '#219653' : '#5f5f5f'
   })}>
                             <Button3>
-                            Upload Research
+                            Upload Galley
                         </Button3>
                         </NavLink>
                         <NavLink to="/uploadtext" style={{textDecoration: "none"}}>
@@ -204,7 +207,29 @@ const Logo = styled.div`
     align-items: center;
     display: flex;
 `;
-
+const Navigation = styled.div`
+    width: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    @media screen and (max-width: 768px) {
+        display: none;
+    }
+    /* cursor: pointer; */
+    /* background-color: red; */
+`;
+const Navhold = styled.div`
+    font-weight: bolder;
+    cursor: pointer;
+    color: #444444;
+    margin-bottom: 10px;
+    margin-top: 40px;
+`;
+const Nav = styled.div`
+    font-weight: bolder;
+    cursor: pointer;
+    color: #5f5f5f;
+`;
 const Button3 = styled.div`
     height: 50px;
     width: 150px;
@@ -245,4 +270,26 @@ const Button2 = styled.div`
         color: #00A85A;
         border: 1px solid #00A85A;
     };
+`;
+const Button = styled.div`
+    height: 50px;
+    width: 150px;
+    background-color:  #00A85A;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 350ms;
+    font-weight: bold;
+	color: white;
+    :hover{
+        transform: scale(0.9);
+        background-color: #F5F5F5;
+        color: #00A85A;
+        border: 1px solid #00A85A;
+    };
+    @media screen and (max-width: 900px) {
+        display: none;
+    }
 `;

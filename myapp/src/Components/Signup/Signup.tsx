@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import img from "../Assets/uniAbuja.jpeg";
 import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { NavLink, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useMutation } from "@tanstack/react-query";
 import { UseAppDispach } from "../Apis/Store";
 import { Admin } from "../Apis/ReduxState";
@@ -24,8 +24,6 @@ const Create = () => {
     setViewPassword(!ViewPassword);
   };
 
-  const [defaultPassword, setDefaultPassword] = useState("uniabuja@123");
-
   const schema = yup
     .object({
       name: yup.string().required("name is required"),
@@ -38,8 +36,6 @@ const Create = () => {
 
   const {
     handleSubmit,
-    formState: { errors },
-    reset,
     register,
   } = useForm<formData>({
     resolver: yupResolver(schema),
@@ -129,23 +125,6 @@ const Create = () => {
 };
 
 export default Create;
-const Hold = styled.div`
-  width: 30%;
-  height: 120px;
-  background-color: red;
-  position: relative;
-  display: flex;
-  justify-content: center;
-  ::after {
-    content: "";
-    position: absolute;
-    width: 15px;
-    height: 15px;
-    transform: rotate(45deg);
-    background-color: red;
-    margin-top: -7px;
-  }
-`;
 
 const Iconhold = styled.div`
   width: 20%;
@@ -183,16 +162,7 @@ const Button2 = styled.button`
   cursor: pointer;
   text-decoration: none;
 `;
-const Button = styled.div`
-  width: 125px;
-  height: 40px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #b2b2b2;
-  margin: 7px;
-  cursor: pointer;
-`;
+
 const Buttonhold = styled.div`
   width: 100%;
   padding-right: 20px;

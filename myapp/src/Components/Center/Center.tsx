@@ -1,9 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import images from "../Assets/mat1.jpg"
-import images2 from "../Assets/vect.png"
-import images3 from "../Assets/mat1.jpg"
-import {GrCheckmark} from "react-icons/gr"
+
 
 const Center = () => {
   return (
