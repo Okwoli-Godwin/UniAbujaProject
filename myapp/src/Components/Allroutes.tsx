@@ -20,6 +20,7 @@ import Dashboard from './Dashboard/Dashboard'
 import Uploadgallery from './UploadPage/Uploadgallery'
 import UploadText from './UploadPage/UploadText'
 import AdminResearch from './Research/AdminResearch'
+import Admingallery from './Gallery/Admingallery'
 
 const Allroutes = () => {
     let element = useRoutes([
@@ -116,6 +117,10 @@ const Allroutes = () => {
         {
             path: "/adminresearch",
             element: <AdminResearch />
+        },
+        {
+            path: "/admingallery",
+            element: <Admingallery/>
         }
     ])
   return element

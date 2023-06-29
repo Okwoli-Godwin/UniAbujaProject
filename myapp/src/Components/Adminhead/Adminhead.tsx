@@ -84,21 +84,17 @@ const Header = () => {
         <Wrapper>
             <Logo>
                 <Img src={image} />
-            </Logo>
+                          </Logo>
+                          
            <Buttonhold>
-                <NavLink to="/upload" style={({ isActive }) => ({
+                <NavLink to="/gallery" style={({ isActive }) => ({
     textDecoration: "none",
     color: isActive ? '#219653' : '#5f5f5f'
   })}>
                             <Button2>
-                            Upload Research
+                            Gallery
                         </Button2>
                         </NavLink>
-            <NavLink to="/uploadtext" style={{textDecoration: "none"}}>
-                              <Button2>
-                Upload text
-            </Button2>
-            </NavLink>
 
                               <NavLink to="/dashboard" style={{textDecoration: "none"}}>
                               <Button2>
