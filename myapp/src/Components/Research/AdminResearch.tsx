@@ -136,8 +136,8 @@ const New = styled.div`
     bottom: 500px;
   }
   @media screen and (max-width: 320px) {
-    right: 180px;
-    bottom: 475px;
+    right: 140px;
+    bottom: 505px;
   }
 `;
 const Data = styled.div`
@@ -151,6 +151,14 @@ const Data = styled.div`
     @media screen and (max-width: 320px) {
         /* background-color: red; */
         width: 93%;
+    }
+    @media screen and (max-width: 375px) {
+        /* background-color: red; */
+        width: 90%;
+    }
+    @media screen and (max-width: 425px) {
+        /* background-color: red; */
+        width: 95%;
     }
   }
   font-size: 1.5rem;
@@ -178,13 +186,17 @@ const Down2 = styled.div`
   height: 50%;
   background-color: #0c8f54;
   display: flex;
-  padding-top: 40px;
-  padding-left: 40px;
+  padding-top: 20px;
+  padding-left: 10px;
   color: white;
   flex-direction: column;
   position: relative;
   @media screen and (max-width: 425px) {
     padding-left: 15px;
+  }
+  @media screen and (max-width: 375px) {
+    padding-left: 15px;
+    padding-right: 10px;
   }
 `;
 const Img = styled.img`
