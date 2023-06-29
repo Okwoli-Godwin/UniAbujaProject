@@ -123,15 +123,19 @@ const New = styled.div`
   /* padding-right: 20px; */
   justify-content: center;
   border-radius: 50px;
-  bottom: 515px;
-  right: 260px;
+  bottom: 505px;
+  right: 230px;
   @media screen and (max-width: 1024px) {
     right: 340px;
   }
   @media screen and (max-width: 768px) {
     right: 220px;
   }
-  @media screen and (max-width: 425px) {
+  @media screen and (max-width: 500px) {
+    right: 225px;
+    bottom: 500px;
+  }
+  @media screen and (max-width: 375px) {
     right: 205px;
     bottom: 500px;
   }
@@ -233,8 +237,8 @@ const Box = styled.div`
   @media screen and (max-width: 768px) {
     width: 320px;
   }
-  @media screen and (max-width: 445px) {
-    width: 100%;
+  @media screen and (max-width: 500px) {
+    width: 340px;
   }
 `;
 const P = styled.div`

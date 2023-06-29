@@ -157,6 +157,7 @@ const Card = styled.div`
     /* justify-content: center; */
     align-items: center;
     background-color: white;
+    position: fixed;
 `
 const Dropdown = styled.div`
     position: absolute;
@@ -200,7 +201,7 @@ const Container = styled.div<{ bg: string; }>`
     overflow: hidden;
     align-items: center;
     justify-content: center;
-    position: sticky;
+    position: fixed;
 	top: 0;
 	z-index: 19189;
 	transition: all 350ms;
