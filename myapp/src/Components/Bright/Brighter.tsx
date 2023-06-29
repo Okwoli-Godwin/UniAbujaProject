@@ -90,9 +90,8 @@ const BrilliantsComp = () => {
                   {/* <Pe>Promoting National Development through Research, Tapping Talents, Fostering Research Culture, Creating Opportunities.</Pe> */}
                   <Buttonhold>
                       <Button>
-                        {/* <Up>Deadline</Up>
-                          <Down>30/04/2023</Down> */}
-                        <Up>{data.button}</Up>
+                        <Up>Deadline</Up>
+                          <Down>{data.button}</Down>
                       </Button>
                   </Buttonhold>
                 </Boshold>
@@ -106,6 +105,9 @@ const BrilliantsComp = () => {
 };
 
 export default BrilliantsComp;
+const Down = styled.div`
+  color: #fff;
+`
 const Up = styled.div`
   color: #fff;
   text-align: center;

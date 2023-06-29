@@ -158,11 +158,12 @@ const Card = styled.div`
     align-items: center;
     background-color: white;
     position: fixed;
+    padding-top: 15px;
 `
 const Dropdown = styled.div`
-    position: absolute;
+    /* position: absolute; */
     background-color: rgba(0, 0, 0, 0.4);
-    height: 700px;
+    height: 100vh;
     display: flex;
     position: fixed;
     right: 0;
