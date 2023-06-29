@@ -86,7 +86,6 @@ const BrilliantsComp = () => {
               {getPost?.data?.data?.map((data: any) => (
                 <Boshold>
                   <Top2>{data.writeups}</Top2>
-
                   {/* <Pe>Promoting National Development through Research, Tapping Talents, Fostering Research Culture, Creating Opportunities.</Pe> */}
                   <Buttonhold>
                       <Button>
@@ -105,6 +104,30 @@ const BrilliantsComp = () => {
 };
 
 export default BrilliantsComp;
+const P = styled.h3`
+  font-size: 1.125rem;
+  width: 85%;
+  line-height: 1.75rem;
+  text-align: center;
+  padding-left: 15px;
+  padding-right: 15px;
+  color: #fff;
+  /* background-color: red; */
+  margin-top: -8px;
+  @media screen and (max-width: 425px) {
+    font-size: 17px;
+    text-align: center;
+    line-height: 1.65rem;
+  }
+  @media screen and (max-width: 320px) {
+    font-size: 15px;
+    text-align: center;
+    line-height: 1.65rem;
+    width: 80%;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+`;
 const Down = styled.div`
   color: #fff;
 `
@@ -190,42 +213,27 @@ const Boxhold = styled.div`
   background-color: rgba(0, 0, 0, 0.5);
 `;
 const Top2 = styled.div`
-  width: 70%;
+  width: 85%;
   padding-top: 10px;
   padding-bottom: 10px;
   display: flex;
   justify-content: center;
   color: white;
   font-size: 30px;
+  /* overflow: hidden; */
   background-color: red;
   border-radius: 7px;
   text-align: center;
   /* line-height: 2.5rem; */
   font-weight: 500;
+  flex-wrap: wrap;
   @media screen and (max-width: 425px) {
     font-size: 28px;
     font-weight: 500;
   }
-  h1 {
-    font-size: 40px;
-    font-weight: 700;
-    line-height: 2.5rem;
-    color: #fff;
-    margin: 0;
-
-    /* font-family: "Avenir", sans-serif; */
-    @media screen and (max-width: 768px) {
-      font-size: 18px;
-    }
-
-    @media screen and (max-width: 425px) {
-      font-size: 12px;
-      font-weight: 500;
-    }
-  }
-  @media screen and (max-width: 874px) {
+  /* @media screen and (max-width: 874px) {
     width: 100%;
-  }
+  } */
 `;
 const Top = styled.div`
   width: 100%;

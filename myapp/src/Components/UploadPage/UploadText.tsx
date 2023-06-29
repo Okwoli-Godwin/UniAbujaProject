@@ -53,11 +53,12 @@ const UploadText = () => {
           />
 
           <Inp
+            type="date"
             value={button}
             onChange={(e) => {
               setButton(e.target.value);
             }}
-            placeholder="Enter Summary"
+            placeholder="Enter date"
           />
 
           <Button2
