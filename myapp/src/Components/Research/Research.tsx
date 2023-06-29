@@ -78,7 +78,7 @@ const Research: React.FC = () => {
               <Data>
                 <span>{e.name}</span>
                 <br />
-                <p>Medicine & Surgery</p> <h5>Research: {e.summary}</h5>
+                        <p>{e.course}</p> <h5>Research: {e.summary}</h5>
               </Data>
               <New>{e.section} 🥉</New>
               {/* <New>Rs: 2021</New> */}

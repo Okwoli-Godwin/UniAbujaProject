@@ -43,7 +43,8 @@ const UploadPage = () => {
             icon: "success",
             title: "Image Uploaded",
             timer: 3000
-          })
+			})
+		setSummary("")
 			
 	};
 
@@ -78,7 +79,7 @@ const UploadPage = () => {
 						}}
 						placeholder='Enter Section'
 					/>
-					<Inp
+					<TextArea
 						onChange={(e) => {
 							setSummary(e.target.value);
 						}}
@@ -87,7 +88,10 @@ const UploadPage = () => {
 
 					{name !== "" &&
 					course !== "" &&
-					coverImage !== "" ? (
+					coverImage !== "" &&
+					summary !== "" &&
+					section !== ""
+					? (
 						<Button2 onClick={UploadEbook} cp='pointer' bg='black'>
 							Submit
 						</Button2>
@@ -106,6 +110,22 @@ const UploadPage = () => {
 };
 
 export default UploadPage;
+const TextArea = styled.textarea`
+	width: 350px;
+	height: 60px;
+	resize: none;
+	border-radius: 3px;
+	border: 0.7px solid silver;
+	outline-color: #f8cbe0;
+	padding-left: 10px;
+	padding-top: 5px;
+	@media screen and (max-width: 425px) {
+		width: 300px;
+	}
+	@media screen and (max-width: 375px) {
+		width: 250px;
+	}
+`
 
 const Img = styled.img`
 	height: 100%;
