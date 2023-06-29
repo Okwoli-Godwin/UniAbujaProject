@@ -5,9 +5,34 @@ import img from "../Assets/uniAbuja.jpeg"
 import { MdDelete } from "react-icons/md";
 import Footer from '../Footer/Footer'
 import { useQuery } from "@tanstack/react-query"
-import { ReadImage } from '../Apis/ApiCalls'
+import { ReadImage, deleteGallery } from '../Apis/ApiCalls'
+import { useMutation } from "@tanstack/react-query";
+import Swal from "sweetalert2";
 
 const Admingallery = () => {
+
+    const deleteOneImage = useMutation({
+        mutationFn: (id: any) => deleteGallery(id),
+        onSuccess: (data: any) => {
+            console.log("data", data);
+            Swal.fire({
+                icon: "success",
+                title: `${data?.message}`,
+                timer: 2000,
+                didOpen: () => {
+                    Swal.showLoading();
+                },
+
+                willClose: () => {
+                    window.location.reload()
+                }
+            })
+        }
+    })
+
+    const submit = (id: any) => {
+        deleteOneImage.mutate(id)
+    }
 
   
   const data = useQuery({
@@ -34,9 +59,9 @@ const Admingallery = () => {
                     <Imgs  src={e.GalleryImage}/> 
                     </Up>
                     <Delete
-                // onClick={() => {
-                //   submit(e._id);
-                // }}
+                onClick={() => {
+                  submit(e._id);
+                }}
               >
                 <MdDelete />
               </Delete>
