@@ -1,7 +1,6 @@
 import React from "react";
 import styled from "styled-components";
 import { NavLink } from "react-router-dom";
-import Header from "../Header";
 import Footer from "../Footer/Footer";
 import { useQuery } from "@tanstack/react-query";
 import { ReadData, deleteData } from "../Apis/ApiCalls";
@@ -103,6 +102,12 @@ const Delete = styled.div`
   margin-left: 300px;
   font-size: 23px;
   cursor: pointer;
+  @media screen and (max-width: 375px) {
+    margin-left: 270px;
+  }
+  @media screen and (max-width: 320px) {
+    margin-left: 240px;
+  }
 `;
 
 const New = styled.div`
@@ -142,12 +147,17 @@ const Data = styled.div`
     font-size: 15px;
     margin-top: 10px;
     line-height: 20px;
+
+    @media screen and (max-width: 320px) {
+        /* background-color: red; */
+        width: 93%;
+    }
   }
   font-size: 1.5rem;
   line-height: 2rem;
   margin-top: -15px;
   /* background-color: red; */
-  width: 315px;
+  width: 100%;
   p {
     margin: 0;
     font-size: 15px;
