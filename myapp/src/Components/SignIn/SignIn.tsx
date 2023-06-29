@@ -72,7 +72,7 @@ const Signin = () => {
           },
 
           willClose: () => {
-            navigate("/dashboard");
+            navigate("/adminresearch");
           },
         });
         reset();

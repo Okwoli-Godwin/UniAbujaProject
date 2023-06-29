@@ -89,6 +89,12 @@ const Header = () => {
                 Upload text
             </Button2>
             </NavLink>
+
+                              <NavLink to="/dashboard" style={{textDecoration: "none"}}>
+                              <Button2>
+                Dashboard
+            </Button2>
+            </NavLink>
             </Buttonhold>
             <Hamburger onClick={Toggle}>
                 <FiMenu />
@@ -121,7 +127,7 @@ const Header = () => {
 
 export default Header;
 const Buttonhold = styled.div`
-    width: 310px;
+    /* width: 310px; */
     display: flex;
     height: 100%;
     align-items: center;
@@ -237,6 +243,7 @@ const Button2 = styled.div`
     font-size: 15px;
     transition: all 350ms;
     font-weight: 600;
+    margin-left: 10px;
     /* margin-bottom: 10px; */
 	color: white;
     :hover{
