@@ -60,7 +60,8 @@ export const ReadText = async () => {
 
 export const deleteData = async (id: any) => {
   return await axios
-    .delete(`https://cur-uni-abuja.onrender.com/app/image/delete/${id}`)
-    .then((res) => res.data)
-    .catch((err) => err);
+    .delete(
+      `https://cur-uni-abuja.onrender.com/app/image/delete/649c05ee92af13f55c234ffd/${id}`
+    )
+    .then((res) => res.data);
 };
