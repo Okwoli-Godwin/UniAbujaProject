@@ -60,7 +60,7 @@ const Signin = () => {
           text: "email or password incorrect",
           icon: "error",
         });
-      } else if (myData?.message === "Admin created") {
+      } else if (myData?.message === "Successfully Login") {
         Swal.fire({
           title: "Logged in",
           html: "Successfull",
