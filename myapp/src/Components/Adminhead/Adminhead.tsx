@@ -87,7 +87,7 @@ const Header = () => {
                           </Logo>
                           
            <Buttonhold>
-                <NavLink to="/gallery" style={({ isActive }) => ({
+                <NavLink to="/admingallery" style={({ isActive }) => ({
     textDecoration: "none",
     color: isActive ? '#219653' : '#5f5f5f'
   })}>
