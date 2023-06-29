@@ -44,6 +44,11 @@ const Header = () => {
                               <Button2>
                 Upload text
             </Button2>
+                          </NavLink>
+                           <NavLink to="/dashboard" style={{textDecoration: "none"}}>
+                              <Button2>
+                Dashboard
+            </Button2>
             </NavLink>
             </Buttonhold>
             <Hamburger onClick={Toggle}>
@@ -61,6 +66,11 @@ const Header = () => {
            <NavLink to="/uploadtext" style={{textDecoration: "none"}}>
                               <Button2>
                 Upload text
+            </Button2>
+                                      </NavLink>
+                                       <NavLink to="/dashboard" style={{textDecoration: "none"}}>
+                              <Button2>
+                Dashboard
             </Button2>
             </NavLink>
             </Buttonhold>
@@ -113,6 +123,11 @@ const Header = () => {
                         <NavLink to="/uploadtext" style={{textDecoration: "none"}}>
                               <Button3>
                 Upload text
+            </Button3>
+                                      </NavLink>
+                                       <NavLink to="/dashboard" style={{textDecoration: "none"}}>
+                              <Button3>
+                Dashboard
             </Button3>
             </NavLink>
                     </Card>

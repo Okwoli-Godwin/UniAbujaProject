@@ -44,9 +44,6 @@ const AdminResearch: React.FC = () => {
       <br />
       <br />
       <br />
-      <br />
-      <br />
-      <br />
       <Text>Our Undergraduate Researchers</Text>
       <P>
         It is a Catch Them Young approach to help promote research culture among
@@ -257,7 +254,7 @@ const Wrapper = styled.div`
   width: 91%;
   display: flex;
   flex-wrap: wrap;
-  margin-top: 80px;
+  margin-top: 10px;
   justify-content: space-between;
   flex-wrap: wrap;
   @media screen and (max-width: 425px) {
