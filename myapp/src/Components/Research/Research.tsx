@@ -14,29 +14,6 @@ const Research: React.FC = () => {
     queryFn: ReadData,
   });
 
-  const deletOneImage = useMutation({
-    mutationFn: (id: any) => deleteData(id),
-    onSuccess: (data: any) => {
-      console.log("data", data);
-      Swal.fire({
-        icon: "success",
-        title: `${data?.message}`,
-        timer: 2000,
-        didOpen: () => {
-          Swal.showLoading();
-        },
-
-        willClose: () => {
-          window.location.reload();
-        },
-      });
-    },
-  });
-
-  const submit = (id: any) => {
-    deletOneImage.mutate(id);
-  };
-
   return (
     <Container>
       <Header />
@@ -68,17 +45,10 @@ const Research: React.FC = () => {
               <Img src={e.coverImage} />
             </Up>
             <Down2>
-              <Delete
-                onClick={() => {
-                  submit(e._id);
-                }}
-              >
-                <MdDelete />
-              </Delete>
               <Data>
                 <span>{e.name}</span>
                 <br />
-                        <p>{e.course}</p> <h5>Research: {e.summary}</h5>
+                <p>{e.course}</p> <h5>Research: {e.summary}</h5>
               </Data>
               <New>{e.section} 🥉</New>
               {/* <New>Rs: 2021</New> */}
