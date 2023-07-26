@@ -7,126 +7,123 @@ import Footer from "../Footer/Footer";
 import Swal from "sweetalert2";
 
 const UploadPage = () => {
-	const [course, setCourse] = React.useState("");
-	const [coverImage, setcoverImage] = React.useState("");
-	const [name, setName] = React.useState("");
-	const [section, setSection] = React.useState("");
-	const [summary, setSummary] = React.useState("");
-	const [previewImage, setPreviewImage] = React.useState("");
-	const [show, setShow] = React.useState(false);
+  const [course, setCourse] = React.useState("");
+  const [coverImage, setcoverImage] = React.useState("");
+  const [name, setName] = React.useState("");
+  const [section, setSection] = React.useState("");
+  const [summary, setSummary] = React.useState("");
+  const [previewImage, setPreviewImage] = React.useState("");
+  const [show, setShow] = React.useState(false);
 
-	const ImageOnchange = (e: any) => {
-		const file = e.target.files[0];
-		setcoverImage(file);
-		const url = URL.createObjectURL(file);
-		setPreviewImage(url);
-		console.log("here",url);
-	};
+  const ImageOnchange = (e: any) => {
+    const file = e.target.files[0];
+    setcoverImage(file);
+    const url = URL.createObjectURL(file);
+    setPreviewImage(url);
+    console.log("here", url);
+  };
 
-	const UploadEbook = async () => {
-		setShow(true);
-		const formdata = new FormData();
+  const UploadEbook = async () => {
+    setShow(true);
+    const formdata = new FormData();
 
-		formdata.append("course", course);
-		formdata.append("coverImage", coverImage);
-		formdata.append("name", name);
-		formdata.append("section", section);
-		formdata.append("summary", summary);
+    formdata.append("course", course);
+    formdata.append("coverImage", coverImage);
+    formdata.append("name", name);
+    formdata.append("section", section);
+    formdata.append("summary", summary);
 
-		await axios
-			.post("https://cur-uni-abuja.onrender.com/app/image/post", formdata)
-			.then((res) => {
-				console.log("data",res);
-				setShow(false);
-			})
-			Swal.fire({
-            icon: "success",
-            title: "Image Uploaded",
-            timer: 3000
-			})
-		setSummary("")
-			
-	};
+    await axios
+      .post("https://cur-uni-abuja.onrender.com/app/image/post", formdata)
+      .then((res) => {
+        console.log("data", res);
+        setShow(false);
+      });
+    Swal.fire({
+      icon: "success",
+      title: "Image Uploaded",
+      timer: 3000,
+    });
+    setSummary("");
+  };
 
-	return (
-		<Container>
-			<Adminhead2 />
-			{show ? <Loading /> : null}
-			<Wrapper>
-				<Card>
-					<Circle>
-						<Img src={previewImage} />
-					</Circle>
+  return (
+    <Container>
+      <Adminhead2 />
+      {show ? <Loading /> : null}
+      <Wrapper>
+        <Card>
+          <Circle>
+            <Img src={previewImage} />
+          </Circle>
 
-					<Input onChange={ImageOnchange} id='pix' type='file' />
-					<Button htmlFor='pix'>Upload Image</Button>
+          <Input onChange={ImageOnchange} id="pix" type="file" />
+          <Button htmlFor="pix">Upload Image</Button>
 
-					<Inp
-						onChange={(e) => {
-							setName(e.target.value);
-						}}
-						placeholder='Enter Name'
-					/>
-					<Inp
-						onChange={(e) => {
-							setCourse(e.target.value);
-						}}
-						placeholder='Enter Course'
-					/>
-					<Inp
-						onChange={(e) => {
-							setSection(e.target.value);
-						}}
-						placeholder='Enter Section'
-					/>
-					<TextArea
-						onChange={(e) => {
-							setSummary(e.target.value);
-						}}
-						placeholder='Enter Summary'
-					/>
+          <Inp
+            onChange={(e) => {
+              setName(e.target.value);
+            }}
+            placeholder="Enter Name"
+          />
+          <Inp
+            onChange={(e) => {
+              setCourse(e.target.value);
+            }}
+            placeholder="Enter Course"
+          />
+          <Inp
+            onChange={(e) => {
+              setSection(e.target.value);
+            }}
+            placeholder="Enter Section"
+          />
+          <TextArea
+            onChange={(e) => {
+              setSummary(e.target.value);
+            }}
+            placeholder="Enter Summary"
+          />
 
-					{name !== "" &&
-					course !== "" &&
-					coverImage !== "" &&
-					summary !== "" &&
-					section !== ""
-					? (
-						<Button2 onClick={UploadEbook} cp='pointer' bg='black'>
-							Submit
-						</Button2>
-					) : (
-						<Button2 cp='not-allowed' bg='silver'>
-							Submit
-						</Button2>
-					)}
-				</Card>
-			</Wrapper>
-			<br />
-			<br />
-			<Footer />
-		</Container>
-	);
-
+          {name !== "" &&
+          course !== "" &&
+          coverImage !== "" &&
+          summary !== "" &&
+          section !== "" ? (
+            <Button2 onClick={UploadEbook} cp="pointer" bg="black">
+              Submit
+            </Button2>
+          ) : (
+            <Button2 cp="not-allowed" bg="silver">
+              Submit
+            </Button2>
+          )}
+        </Card>
+      </Wrapper>
+      <br />
+      <br />
+      <Footer />
+    </Container>
+  );
 };
 
 export default UploadPage;
 const TextArea = styled.textarea`
-	width: 350px;
-	height: 60px;
-	resize: none;
-	border-radius: 3px;
-	border: 0.7px solid silver;
-	outline-color: #f8cbe0;
-	padding-left: 10px;
-	padding-top: 5px;
-	@media screen and (max-width: 425px) {
-		width: 300px;
-	}
-	@media screen and (max-width: 375px) {
-		width: 250px;
-	}
-`
+  width: 350px;
+  height: 60px;
+  resize: none;
+  border-radius: 3px;
+  border: 0.7px solid silver;
+  outline-color: #f8cbe0;
+  padding-left: 10px;
+  padding-top: 5px;
+  @media screen and (max-width: 425px) {
+    width: 300px;
+  }
+  @media screen and (max-width: 375px) {
+    width: 250px;
+  }
+`;
 
 const Img = styled.img`
   height: 100%;

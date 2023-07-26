@@ -7,7 +7,7 @@ import Footer from "../Footer/Footer";
 import Swal from "sweetalert2";
 
 const Pdfupload = () => {
-  const [GalleryImage, setGalleryImage] = React.useState("");
+  const [PDFFile, setGalleryImage] = React.useState("");
   const [previewImage, setPreviewImage] = React.useState("");
   const [show, setShow] = React.useState(false);
 
@@ -23,15 +23,17 @@ const Pdfupload = () => {
     setShow(true);
     const formdata = new FormData();
 
-    formdata.append("GalleryImage", GalleryImage);
+    formdata.append("PDFFile", PDFFile);
     formdata.append("previewImage", previewImage);
-    console.log(GalleryImage)
 
     await axios
       .post("https://cur-uni-abuja.onrender.com/app/pdf/post", formdata)
       .then((res) => {
         console.log("data", res);
         setShow(false);
+      })
+      .catch((err) => {
+        console.log("err", err);
       });
     Swal.fire({
       icon: "success",
@@ -49,13 +51,18 @@ const Pdfupload = () => {
       <Wrapper>
         <Card>
           <Circle>
-            <Img src={previewImage} type="application/pdf"  />
+            <Img src={previewImage} type="application/pdf" />
           </Circle>
 
-          <Input onChange={ImageOnchange} id="pix" type="file" accept="application/pdf"/>
+          <Input
+            onChange={ImageOnchange}
+            id="pix"
+            type="file"
+            accept="application/pdf"
+          />
           <Button htmlFor="pix">Upload Pdf</Button>
 
-          {GalleryImage !== "" ? (
+          {PDFFile !== "" ? (
             <Button2 onClick={UploadEbook} cp="pointer" bg="black">
               Submit
             </Button2>
