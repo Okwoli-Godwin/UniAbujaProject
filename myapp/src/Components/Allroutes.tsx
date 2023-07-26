@@ -21,6 +21,8 @@ import Uploadgallery from './UploadPage/Uploadgallery'
 import UploadText from './UploadPage/UploadText'
 import AdminResearch from './Research/AdminResearch'
 import Admingallery from './Gallery/Admingallery'
+import Pdf from './Pdf_page/Pdf'
+import Pdfupload from './UploadPage/Pdfupload'
 
 const Allroutes = () => {
     let element = useRoutes([
@@ -121,6 +123,14 @@ const Allroutes = () => {
         {
             path: "/admingallery",
             element: <Admingallery/>
+        },
+        {
+            path: "/pdf",
+            element: <Pdf />
+        },
+        {
+            path: "/pdfupload",
+            element: <Pdfupload />
         }
     ])
   return element

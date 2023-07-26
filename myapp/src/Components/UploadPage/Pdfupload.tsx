@@ -6,7 +6,7 @@ import Adminhead from "../Adminhead/Adminhead";
 import Footer from "../Footer/Footer";
 import Swal from "sweetalert2";
 
-const Uploadgallery = () => {
+const Pdfupload = () => {
   const [GalleryImage, setGalleryImage] = React.useState("");
   const [previewImage, setPreviewImage] = React.useState("");
   const [show, setShow] = React.useState(false);
@@ -24,9 +24,11 @@ const Uploadgallery = () => {
     const formdata = new FormData();
 
     formdata.append("GalleryImage", GalleryImage);
+    formdata.append("previewImage", previewImage);
+    console.log(GalleryImage)
 
     await axios
-      .post("https://cur-uni-abuja.onrender.com/app/gallery/post", formdata)
+      .post("https://cur-uni-abuja.onrender.com/app/pdf/post", formdata)
       .then((res) => {
         console.log("data", res);
         setShow(false);
@@ -51,7 +53,7 @@ const Uploadgallery = () => {
           </Circle>
 
           <Input onChange={ImageOnchange} id="pix" type="file" accept="application/pdf"/>
-          <Button htmlFor="pix">Upload Image</Button>
+          <Button htmlFor="pix">Upload Pdf</Button>
 
           {GalleryImage !== "" ? (
             <Button2 onClick={UploadEbook} cp="pointer" bg="black">
@@ -71,7 +73,7 @@ const Uploadgallery = () => {
   );
 };
 
-export default Uploadgallery;
+export default Pdfupload;
 
 const Img = styled.embed`
   height: 100%;

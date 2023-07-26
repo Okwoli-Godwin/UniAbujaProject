@@ -73,7 +73,10 @@ const Header = () => {
     color: isActive ? '#219653' : '#5f5f5f'
   })}>
                     <One>Submission</One>
-                </NavLink>
+                      </NavLink>
+                      <NavLink to="/pdf">
+                          <One style={{color: "blue"}}>Download Pdf</One>
+                      </NavLink>
             </Jou>
             ) : null}
             {faculty ? (
@@ -190,6 +193,9 @@ const Header = () => {
     color: isActive ? '#219653' : '#5f5f5f'
   })}>
                     <One>Submission</One>
+                </NavLink>
+                <NavLink to="/pdf">
+                     <One>Download Pdf</One>
                 </NavLink>
             </Drops2>
             ) : null}

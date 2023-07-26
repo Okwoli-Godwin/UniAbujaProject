@@ -1,7 +1,6 @@
 import * as React from "react"
 import { Viewer, Worker } from "@react-pdf-viewer/core";
 import { getFilePlugin, RenderDownloadProps } from "@react-pdf-viewer/get-file";
-
 import "@react-pdf-viewer/core/lib/styles/index.css";
 import pdfFile from "../Assets/uniabuja.pdf"
 import styled from "styled-components";

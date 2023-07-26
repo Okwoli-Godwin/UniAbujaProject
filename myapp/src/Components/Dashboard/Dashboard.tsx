@@ -36,6 +36,15 @@ const Dashboard = () => {
                         <Text><h3>Update Hero Text</h3></Text>
                     </Holder>
                     </NavLink>
+
+                    <NavLink to="/pdfupload" style={{textDecoration: "none"}}>
+                        <Holder>
+                        <Upload>
+                            <AiOutlinePlus />
+                        </Upload>
+                        <Text><h3>Update Pdf</h3></Text>
+                    </Holder>
+                    </NavLink>
                 </Down>
             </Wrapper>
         </Container>
