@@ -2,14 +2,15 @@ import React from "react";
 import styled from "styled-components";
 import Header from "../Header";
 import img from "../Assets/uniAbuja.jpeg";
-import { useQuery } from "@tanstack/react-query"
+import { useQuery } from "@tanstack/react-query";
+import { ReadPdf } from "../Apis/ApiCalls";
 
 const Pdf = () => {
-
   const data = useQuery({
     queryFn: ReadPdf,
-    querykey: ["allpdf"]
-  })
+    queryKey: ["pdf"],
+  });
+
   return (
     <Container>
       <Header />
