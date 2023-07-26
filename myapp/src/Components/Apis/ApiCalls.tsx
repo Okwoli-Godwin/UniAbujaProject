@@ -25,6 +25,13 @@ export const ReadData = async () => {
     .catch((err) => err);
 };
 
+export const ReadPdf = async () => {
+  return await axios
+    .get("https://cur-uni-abuja.onrender.com/app/pdf/getall")
+    .then((res) => res.data)
+    .catch((err) => err);
+};
+
 export const ReadImage = async () => {
   return await axios
     .get("https://cur-uni-abuja.onrender.com/app/gallery/getall")

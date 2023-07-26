@@ -10,14 +10,8 @@ import Swal from "sweetalert2"
 import { useQuery } from "@tanstack/react-query"
 import { ReadImage } from '../Apis/ApiCalls'
 
-interface User {
-  id: string,
-	GalleryImage: string
-}
 
 const Gallery = () => {
-
-    const [postData, setPostData] = useState<User[]>([])
 
   
   const data = useQuery({
