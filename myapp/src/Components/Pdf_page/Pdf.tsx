@@ -11,6 +11,8 @@ const Pdf = () => {
     queryKey: ["pdf"],
   });
 
+   console.log(data)
+
   return (
     <Container>
       <Header />
@@ -26,10 +28,16 @@ const Pdf = () => {
         </Top>
 
         <Down>
-          <Box>
-            <Up></Up>
+         {
+            data?.data?.data.map((e: any) => (
+             <Box key={e.id}>
+            <Up>
+              <Imgs  src={e.PDFFile}/>
+            </Up>
             <Button>Download</Button>
           </Box>
+          ))
+         }
         </Down>
       </Wrapper>
     </Container>
@@ -37,6 +45,24 @@ const Pdf = () => {
 };
 
 export default Pdf;
+const Imgs = styled.embed`
+    transition: all 350ms;
+    object-fit: contain;
+    width: 100%;
+    height: 500px;
+    cursor: pointer;
+    /* :hover{
+        display: block;
+        transform: scale(1.1);
+        background-image: linear-gradient(rgba(0, 0, 0, 0.527), rgba(0, 0, 0, 0.9));
+        z-index: 1;
+        filter: grayscale(3);
+    } */
+    @media screen and (max-width: 500px) {
+      height: 1000px;
+      margin-top: -430px;
+    }
+`
 const Button = styled.button`
   background-color: #357edd;
   border: none;
