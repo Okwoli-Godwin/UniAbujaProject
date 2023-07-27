@@ -33,8 +33,12 @@ const Header = () => {
         <Wrapper>
             <Logo>
                 <Img src={image} />
-            </Logo>
-            <Buttonhold>
+                      </Logo>
+                      
+                      <Buttonhold>
+                          <Mid>
+                          <h4>Upload Gallery</h4>
+                      </Mid>
                 <NavLink to="/galleryupload" style={({ isActive }) => ({
     textDecoration: "none",
     color: isActive ? '#219653' : '#5f5f5f'
@@ -123,6 +127,9 @@ const Header = () => {
 };
 
 export default Header;
+const Mid = styled.div`
+    display: flex;
+`
 const Buttonhold = styled.div`
     width: 310px;
     display: flex;

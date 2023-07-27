@@ -80,3 +80,11 @@ export const deleteGallery = async (id: any) => {
   )
   .then((res) => res.data)
 }
+
+export const deletepdf = async (id: any) => {
+  return await axios
+    .delete(
+      `https://cur-uni-abuja.onrender.com/app/pdf/delete/${id}`
+  )
+  .then((res) => res.data)
+}

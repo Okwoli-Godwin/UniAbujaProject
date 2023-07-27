@@ -37,7 +37,7 @@ const Pdfupload = () => {
       });
     Swal.fire({
       icon: "success",
-      title: "Image Uploaded",
+      title: "files Uploaded",
       timer: 3000,
     });
     setGalleryImage("");

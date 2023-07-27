@@ -8,6 +8,7 @@ import { useQuery } from "@tanstack/react-query";
 import { ReadImage, deleteGallery } from "../Apis/ApiCalls";
 import { useMutation } from "@tanstack/react-query";
 import Swal from "sweetalert2";
+import Adminhead from "../Adminhead/Adminhead"
 
 const Admingallery = () => {
   const deleteOneImage = useMutation({
@@ -40,7 +41,7 @@ const Admingallery = () => {
 
   return (
     <Container>
-      <Header />
+      <Adminhead />
       <Wrapper>
         <Top>
           <Img src={img} />

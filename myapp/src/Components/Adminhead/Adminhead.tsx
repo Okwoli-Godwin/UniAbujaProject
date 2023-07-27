@@ -31,20 +31,20 @@ const Header = () => {
             <Logo>
                 <Img src={image} />
             </Logo>
-            <Buttonhold>
-                <NavLink to="/upload" style={({ isActive }) => ({
-    textDecoration: "none",
-    color: isActive ? '#219653' : '#5f5f5f'
-  })}>
-                            <Button2>
-                            Upload Research
-                        </Button2>
-                        </NavLink>
-                          <NavLink to="/uploadtext" style={{textDecoration: "none"}}>
-                              <Button2>
-                Upload text
-            </Button2>
+           <Mid>
+              <NavLink to="/adminpdf" style={{textDecoration: "none", color: "#505050"}}>
+                <h4 style={{textDecoration: " none", marginRight: "34px"}}>Pdf files </h4>         
                           </NavLink>
+                          
+                          <NavLink to="/admingallery" style={{textDecoration: "none", color: "#505050"}}>
+                <h4 style={{textDecoration: " none", marginRight: "34px"}}>Gallery </h4>         
+                          </NavLink>
+                          
+                          <NavLink to="/adminresearch" style={{textDecoration: "none", color: "#505050"}}>
+                <h4 style={{textDecoration: " none"}}>Researchers </h4>         
+              </NavLink>
+            </Mid>
+            <Buttonhold>
                            <NavLink to="/dashboard" style={{textDecoration: "none"}}>
                               <Button2>
                 Dashboard
@@ -84,18 +84,23 @@ const Header = () => {
         <Wrapper>
             <Logo>
                 <Img src={image} />
-                          </Logo>
+           </Logo>
+
+            <Mid>
+              <NavLink to="/adminpdf" style={{textDecoration: "none", color: "#505050"}}>
+                <h4 style={{textDecoration: " none", marginRight: "34px"}}>Pdf files </h4>         
+                          </NavLink>
+                          
+                          <NavLink to="/admingallery" style={{textDecoration: "none", color: "#505050"}}>
+                <h4 style={{textDecoration: " none", marginRight: "34px"}}>Gallery </h4>         
+                              </NavLink>
+                              
+                              <NavLink to="/adminresearch" style={{textDecoration: "none", color: "#505050"}}>
+                <h4 style={{textDecoration: " none"}}>Researchers </h4>         
+              </NavLink>
+            </Mid>
                           
            <Buttonhold>
-                <NavLink to="/admingallery" style={({ isActive }) => ({
-    textDecoration: "none",
-    color: isActive ? '#219653' : '#5f5f5f'
-  })}>
-                            <Button2>
-                            Gallery
-                        </Button2>
-                        </NavLink>
-
                               <NavLink to="/dashboard" style={{textDecoration: "none"}}>
                               <Button2>
                 Dashboard
@@ -108,17 +113,22 @@ const Header = () => {
             {drop ? (
                 <Dropdown>
                     <Card>
-                        <NavLink to="/upload" style={({ isActive }) => ({
+                        <NavLink to="/adminpdf" style={({ isActive }) => ({
     textDecoration: "none",
     color: isActive ? '#219653' : '#5f5f5f'
   })}>
                             <Button3>
-                            Upload Research
+                            Pdf fles
                         </Button3>
                         </NavLink>
-                        <NavLink to="/uploadtext" style={{textDecoration: "none"}}>
+                        <NavLink to="/admingallery" style={{textDecoration: "none"}}>
                               <Button3>
-                Upload text
+                Gallery
+            </Button3>
+                                      </NavLink>
+                                      <NavLink to="/adminresearch" style={{textDecoration: "none"}}>
+                              <Button3>
+                Researchers
             </Button3>
                                       </NavLink>
                                        <NavLink to="/dashboard" style={{textDecoration: "none"}}>
@@ -137,6 +147,12 @@ const Header = () => {
 };
 
 export default Header;
+const Mid = styled.div`
+    display: flex;
+    @media screen and (max-width: 425px) {
+        display: none;
+    }
+`
 const Buttonhold = styled.div`
     /* width: 310px; */
     display: flex;
@@ -227,7 +243,6 @@ const Logo = styled.div`
 const Button3 = styled.div`
     height: 50px;
     width: 150px;
-    background-color:  #00A85A;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -236,7 +251,7 @@ const Button3 = styled.div`
     transition: all 350ms;
     font-weight: bold;
     margin-bottom: 10px;
-	color: white;
+	color: #505050;
     :hover{
         transform: scale(0.9);
         background-color: #F5F5F5;

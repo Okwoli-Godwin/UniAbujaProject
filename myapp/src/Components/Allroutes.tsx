@@ -22,6 +22,7 @@ import UploadText from './UploadPage/UploadText'
 import AdminResearch from './Research/AdminResearch'
 import Admingallery from './Gallery/Admingallery'
 import Pdf from './Pdf_page/Pdf'
+import Adminpdf from './Pdf_page/Adminpdf'
 import Pdfupload from './UploadPage/Pdfupload'
 
 const Allroutes = () => {
@@ -131,6 +132,10 @@ const Allroutes = () => {
         {
             path: "/pdfupload",
             element: <Pdfupload />
+        },
+        {
+            path: "/adminpdf",
+            element: <Adminpdf />
         }
     ])
   return element
