@@ -12,6 +12,7 @@ import four from "../Assets/clear.jpeg"
 import five from "../Assets/change.jpeg"
 import six from "../Assets/partners6.jpg"
 import seven from "../Assets/deputy1.jpeg"
+import eight from "../Assets/Anthonia.jpg"
 
 const Partners = () => {
   return (
@@ -119,6 +120,15 @@ Our activities include disbursement of grants to undergraduate researches to fac
                 <Down>
                     <Up><h2>Dr Effiom Oku</h2></Up>
                     <P><p>Agriculture</p></P>
+                </Down>
+            </Card>
+            <Card>
+                <Top>
+                    <Img src={eight} />
+                </Top>
+                <Down>
+                    <Up><h2>Anthonia Keenam</h2></Up>
+                    <P><p>Admin Assistant</p></P>
                 </Down>
             </Card>
             {/* <Card2>

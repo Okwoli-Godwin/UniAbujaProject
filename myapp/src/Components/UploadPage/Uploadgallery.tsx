@@ -47,7 +47,7 @@ const Uploadgallery = () => {
       <Wrapper>
         <Card>
           <Circle>
-            <Img src={previewImage} type="application/pdf"  />
+            <Img src={previewImage} />
           </Circle>
 
           <Input onChange={ImageOnchange} id="pix" type="file" accept="application/pdf"/>
@@ -73,7 +73,7 @@ const Uploadgallery = () => {
 
 export default Uploadgallery;
 
-const Img = styled.embed`
+const Img = styled.img`
   height: 100%;
   width: 100%;
   object-fit: cover;
