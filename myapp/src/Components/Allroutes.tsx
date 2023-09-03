@@ -126,7 +126,7 @@ const Allroutes = () => {
             element: <Admingallery/>
         },
         {
-            path: "/pdf",
+            path: "/journal",
             element: <Pdf />
         },
         {

@@ -74,8 +74,8 @@ const Header = () => {
   })}>
                     <One>Submission</One>
                       </NavLink>
-                      <NavLink to="/pdf">
-                          <One style={{color: "blue"}}>Download Pdf</One>
+                      <NavLink to="/journal">
+                          <One style={{color: "blue"}}>Archive</One>
                       </NavLink>
             </Jou>
             ) : null}
@@ -194,8 +194,8 @@ const Header = () => {
   })}>
                     <One>Submission</One>
                 </NavLink>
-                <NavLink to="/pdf">
-                     <One>Download Pdf</One>
+                <NavLink to="/journal">
+                     <One>Archive</One>
                 </NavLink>
             </Drops2>
             ) : null}

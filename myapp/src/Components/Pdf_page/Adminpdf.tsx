@@ -1,8 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-import Header from "../Header";
 import { Viewer, Worker } from "@react-pdf-viewer/core";
-import { getFilePlugin, RenderDownloadProps } from "@react-pdf-viewer/get-file";
+import { getFilePlugin } from "@react-pdf-viewer/get-file";
 import "@react-pdf-viewer/core/lib/styles/index.css";
 import img from "../Assets/uniAbuja.jpeg";
 import { useQuery } from "@tanstack/react-query";
@@ -67,6 +66,10 @@ const Adminpdf = () => {
                     <Viewer fileUrl={e.PDFFile} plugins={[getFilePluginInstance]} />
                   </Worker>
                 </Up>
+
+                <Data>
+                  <h5>{e.namepdf}</h5>
+              </Data>
                 <a style={{textDecoration: "none"}} href={e.PDFFile} download>
                 <Button>Download</Button>
                     </a>
@@ -88,8 +91,61 @@ const Adminpdf = () => {
 };
 
 export default Adminpdf;
+const Data = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  h5 {
+    margin: 0px;
+    font-weight: 500;
+    width: 300px;
+    flex-wrap: wrap;
+    font-size: 15px;
+    margin-top: 10px;
+    line-height: 20px;
+    text-align: center;
+    /* width: 80px; */
+    word-wrap: break-word; 
+
+    @media screen and (max-width: 320px) {
+        /* background-color: red; */
+        width: 93%;
+    }
+    @media screen and (max-width: 375px) {
+        /* background-color: red; */
+        width: 90%;
+    }
+    @media screen and (max-width: 425px) {
+        /* background-color: red; */
+        width: 95%;
+    }
+  }
+  font-size: 1.5rem;
+  line-height: 2rem;
+  margin-top: -15px;
+  /* background-color: red; */
+  width: 100%;
+  p {
+    margin: 0;
+    font-size: 15px;
+  }
+  span {
+    font-weight: bolder;
+    font-size: 18px;
+    line-height: 2rem;
+    text-align: center;
+    @media screen and (max-width: 320px) {
+      font-size: 19px;
+      text-align: center;
+    }
+  }
+`;
+const Name = styled.div`
+  width: 90%;
+  display: flex;
+  justify-content: center;
+`
 const Delete = styled.div`
-  color: red;
   position: absolute;
   right: 30px;
   bottom: 20px;

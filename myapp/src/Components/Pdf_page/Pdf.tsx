@@ -1,8 +1,8 @@
-import React from "react";
+
 import styled from "styled-components";
 import Header from "../Header";
 import { Viewer, Worker } from "@react-pdf-viewer/core";
-import { getFilePlugin, RenderDownloadProps } from "@react-pdf-viewer/get-file";
+import { getFilePlugin } from "@react-pdf-viewer/get-file";
 import "@react-pdf-viewer/core/lib/styles/index.css";
 import img from "../Assets/uniAbuja.jpeg";
 import { useQuery } from "@tanstack/react-query";
@@ -13,6 +13,29 @@ const Pdf = () => {
 
   const getFilePluginInstance = getFilePlugin();
   const { Download } = getFilePluginInstance;
+
+const handleDownloadClick = async (pdfUrl: string) => {
+  try {
+    const response = await fetch(pdfUrl);
+    const blob = await response.blob();
+    
+    // Extract the file name from the URL
+    const urlParts = pdfUrl.split("/");
+    const fileName = urlParts[urlParts.length - 1];
+
+    const url = window.URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = fileName;
+    document.body.appendChild(a);
+    a.click();
+    window.URL.revokeObjectURL(url);
+  } catch (error) {
+    console.error("Error downloading file:", error);
+  }
+};
+
+
 
   return (
     <Container>
@@ -40,9 +63,11 @@ const Pdf = () => {
                     <Viewer fileUrl={e.PDFFile} plugins={[getFilePluginInstance]} />
                   </Worker>
                 </Up>
-                <a style={{textDecoration: "none"}} href={e.PDFFile} download>
-                <Button>Download</Button>
-              </a>
+                <Data>
+                   <h5>{e.namepdf}</h5>
+              </Data>
+                <Button onClick={() => handleDownloadClick(e.PDFFile)}>Download</Button>
+
               </Box>
             ))}
           </Down>
@@ -53,6 +78,56 @@ const Pdf = () => {
 };
 
 export default Pdf;
+const Data = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  h5 {
+    margin: 0px;
+    font-weight: 500;
+    width: 300px;
+    flex-wrap: wrap;
+    font-size: 15px;
+    margin-top: 10px;
+    line-height: 20px;
+    text-align: center;
+    /* width: 80px; */
+    word-wrap: break-word; 
+    font-weight: 600;
+
+    @media screen and (max-width: 320px) {
+        /* background-color: red; */
+        width: 93%;
+    }
+    @media screen and (max-width: 375px) {
+        /* background-color: red; */
+        width: 90%;
+    }
+    @media screen and (max-width: 425px) {
+        /* background-color: red; */
+        width: 95%;
+    }
+  }
+  font-size: 1.5rem;
+  line-height: 2rem;
+  margin-top: -15px;
+  /* background-color: red; */
+  width: 100%;
+  p {
+    margin: 0;
+    font-size: 15px;
+  }
+  span {
+    font-weight: bolder;
+    font-size: 18px;
+    line-height: 2rem;
+    text-align: center;
+    @media screen and (max-width: 320px) {
+      font-size: 19px;
+      text-align: center;
+    }
+  }
+`;
 
 const Button = styled.button`
   background-color: #219653;

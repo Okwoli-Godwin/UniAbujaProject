@@ -1,15 +1,13 @@
 import React from 'react'
 import styled from 'styled-components'
-import Career from '../Career/Career'
 import Footer from '../Footer/Footer'
 import Header from '../Header'
-
+import Prodhero from '../Bright/Prodhero'
 import Hrwelcom from '../Hrwelcom/Hrwelcom'
 import Join from '../Join/Join'
 import Slide from '../Slide/Slide'
 import Vision from '../Vision/Vision'
 
-import Bright from "../Bright/Brighter"
 
 const Homescreen = () => {
   return (
@@ -17,7 +15,7 @@ const Homescreen = () => {
         <Header />
         
         {/* <Hero /> */}
-        <Bright />
+        <Prodhero />
         <br />
         <br />
         <br />

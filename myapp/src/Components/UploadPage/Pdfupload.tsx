@@ -8,6 +8,7 @@ import Swal from "sweetalert2";
 
 const Pdfupload = () => {
   const [PDFFile, setGalleryImage] = React.useState("");
+  const [namepdf, setNamepdf] = React.useState("")
   const [previewImage, setPreviewImage] = React.useState("");
   const [show, setShow] = React.useState(false);
 
@@ -25,6 +26,7 @@ const Pdfupload = () => {
 
     formdata.append("PDFFile", PDFFile);
     formdata.append("previewImage", previewImage);
+    formdata.append("namepdf", namepdf);
 
     await axios
       .post("https://cur-uni-abuja.onrender.com/app/pdf/post", formdata)
@@ -62,7 +64,15 @@ const Pdfupload = () => {
           />
           <Button htmlFor="pix">Upload Pdf</Button>
 
-          {PDFFile !== "" ? (
+          <Inp
+            onChange={(e) => {
+              setNamepdf(e.target.value);
+            }}
+            placeholder="Enter Name"
+          />
+
+          {PDFFile !== "" &&
+          namepdf !== "" ? (
             <Button2 onClick={UploadEbook} cp="pointer" bg="black">
               Submit
             </Button2>
@@ -81,6 +91,21 @@ const Pdfupload = () => {
 };
 
 export default Pdfupload;
+const Inp = styled.input`
+  margin: 10px;
+  width: 350px;
+  height: 30px;
+  border-radius: 3px;
+  border: 0.7px solid silver;
+  outline-color: #f8cbe0;
+  padding-left: 10px;
+  @media screen and (max-width: 425px) {
+    width: 300px;
+  }
+  @media screen and (max-width: 375px) {
+    width: 250px;
+  }
+`;
 
 const Img = styled.embed`
   height: 100%;

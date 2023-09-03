@@ -8,6 +8,7 @@ import maiden from "../Assets/maiden.jpeg";
 import { NavLink } from "react-router-dom";
 import { ReadText } from "../Apis/ApiCalls";
 import { useQuery } from "@tanstack/react-query";
+import img from "../Assets/uni.jpg"
 
 const BrilliantsComp = () => {
   const getPost = useQuery({
@@ -302,11 +303,12 @@ const Container = styled.div`
   align-items: center;
   flex-direction: column;
   margin-top: 60px;
-  background-image: url(${group});
+  background-image: url(${img});
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  /* padding-bottom: 50px; */
+  padding-bottom: 50px;
+  padding-top: 50px;
   h1 {
     text-align: center;
     font-size: 40px;
